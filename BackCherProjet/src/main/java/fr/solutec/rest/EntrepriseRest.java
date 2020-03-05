@@ -1,6 +1,7 @@
 package fr.solutec.rest;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -31,5 +32,15 @@ public class EntrepriseRest {
 		return entrepriseRepo.save(e);
 		
 	}
-
+	
+	@RequestMapping(value = "/entreprises", method = RequestMethod.POST)
+	public Entreprise getConnexion(@RequestBody Entreprise e) {
+		Optional<Entreprise> entreprise  = entrepriseRepo.findByMailAndMdp(e.getMail(), e.getMdp());
+		Entreprise en = new Entreprise();
+		if(entreprise.isPresent()) {
+			en = entreprise.get();
+			en.setMdp("");
+		}
+		return en;
+	}
 }
