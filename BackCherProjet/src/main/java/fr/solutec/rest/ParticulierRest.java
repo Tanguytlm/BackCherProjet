@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +22,11 @@ public class ParticulierRest {
 	public List<Particulier> getAll(){
 		return (List<Particulier>) particulierRepo.findAll();
 		
+	}
+	
+	@RequestMapping(value = "/particulier", method=RequestMethod.POST)
+	public Particulier saveParticulier(@RequestBody Particulier p) {
+		return particulierRepo.save(p);
 		
 	}
 
