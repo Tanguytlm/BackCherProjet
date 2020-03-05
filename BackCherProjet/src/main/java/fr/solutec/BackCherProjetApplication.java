@@ -21,7 +21,11 @@ public class BackCherProjetApplication implements CommandLineRunner{
 	
 	public static void main(String[] args) {
 		SpringApplication.run(BackCherProjetApplication.class, args);
+		
+	
+		
 		System.out.println("finishhhhhhhhhhhhhhhhhhhhhhhhhh");
+		
 	}
 
 	@Override
