@@ -1,5 +1,9 @@
 package fr.solutec.dao;
 
-public interface ParticulierRepository {
+import org.springframework.data.repository.CrudRepository;
+
+import fr.solutec.entities.Particulier;
+
+public interface ParticulierRepository extends CrudRepository<Particulier, Long> {
 
 }

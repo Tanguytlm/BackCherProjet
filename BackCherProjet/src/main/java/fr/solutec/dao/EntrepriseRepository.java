@@ -1,5 +1,9 @@
 package fr.solutec.dao;
 
-public interface EntrepriseRepository {
+import org.springframework.data.repository.CrudRepository;
+
+import fr.solutec.entities.Entreprise;
+
+public interface EntrepriseRepository extends CrudRepository<Entreprise, Long> {
 
 }
