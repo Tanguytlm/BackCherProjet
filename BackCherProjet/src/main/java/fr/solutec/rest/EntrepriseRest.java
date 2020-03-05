@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,6 +33,16 @@ public class EntrepriseRest {
 		return entrepriseRepo.save(e);
 		
 	}
+	
+	@RequestMapping(value = "/entreprise/{id}", method = RequestMethod.PUT)
+	public Entreprise editEntreprise (@RequestBody Entreprise e, @PathVariable Long id) {
+		e.setIdUtilisateur(id);
+		return entrepriseRepo.save(e);
+	}
+	
+	@RequestMapping(value = "/entreprise/{id}", method = RequestMethod.GET)
+	public Optional<Entreprise> getEntreprise(@PathVariable Long id){
+		return entrepriseRepo.findById(id);}
 	
 	@RequestMapping(value = "/entreprises", method = RequestMethod.POST)
 	public Entreprise getConnexion(@RequestBody Entreprise e) {

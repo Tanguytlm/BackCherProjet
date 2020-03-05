@@ -29,7 +29,10 @@ public class BackCherProjetApplication implements CommandLineRunner{
 	public void run(String... args) throws Exception {
 		System.out.println("okkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
 		
-		
+		/*Particulier p1= new Particulier("monMail@serveur.com","monMotDePasse",1,"monNom","monPrenom",15,null,null,null);
+		particulierRepo.save(p1);
+		Entreprise e1= new Entreprise("mailEntreprise","motDePasseEntreprise",0,"nomEntreprise","la crêpe","adresseEntreprise",75000,"0652145654",null,"maDescription");
+		entrepriseRepo.save(e1);*/
 	}
 
 }

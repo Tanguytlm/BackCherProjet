@@ -23,6 +23,12 @@ public class Utilisateur {
 	public String getMdp() {
 		return mdp;
 	}
+	public Long getIdUtilisateur() {
+		return idUtilisateur;
+	}
+	public void setIdUtilisateur(Long idUtilisateur) {
+		this.idUtilisateur = idUtilisateur;
+	}
 	public void setMdp(String mdp) {
 		this.mdp = mdp;
 	}
