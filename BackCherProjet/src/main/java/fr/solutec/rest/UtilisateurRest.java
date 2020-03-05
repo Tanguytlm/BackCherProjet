@@ -1,5 +1,6 @@
 package fr.solutec.rest;
 
-public class UtilisateurRest {
 
+public class UtilisateurRest {
+	
 }
