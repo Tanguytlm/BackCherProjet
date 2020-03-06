@@ -60,7 +60,7 @@ public class BackCherProjetApplication implements CommandLineRunner{
 		Domaine d1= new Domaine("BTP");
 		domaineRepo.save(d1);
 		
-		 Particulier p1= new Particulier("monMail@serveur.com","monMotDePasse",1,"monNom","monPrenom",15,null,null);
+		 Particulier p1= new Particulier("monMail@serveur.com","monMotDePasse",1,"monNom","monPrenom",d.parse("27/09/1996"),null,null);
 		particulierRepo.save(p1);
 		
 		Entreprise e1= new Entreprise("mailEntreprise","motDePasseEntreprise",0,"nomEntreprise","adresseEntreprise",75000,"0652145654",null,"maDescription");
