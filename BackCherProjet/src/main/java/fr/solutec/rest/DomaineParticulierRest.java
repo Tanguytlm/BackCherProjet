@@ -31,10 +31,10 @@ public class DomaineParticulierRest {
 	}
 	
 	@RequestMapping(value = "domaineParticulier/{id}", method = RequestMethod.GET)
-	public Optional<DomaineParticulier> getDomaineParticulier(@PathVariable Long id){
-		return DPaR.findByParticulierIdUtilisateur(id);}
+	public List<DomaineParticulier> getDomaineParticulier(@PathVariable Long id){
+		return (List<DomaineParticulier>) DPaR.findByParticulierIdUtilisateur(id);}
 	
 	@RequestMapping(value = "particulierDomaine/{id}", method = RequestMethod.GET)
-	public Optional<DomaineParticulier> getParticulierDomaine(@PathVariable Long id){
-		return DPaR.findByDomaineIdDomaine(id);}
+	public List<DomaineParticulier> getParticulierDomaine(@PathVariable Long id){
+		return (List<DomaineParticulier>) DPaR.findByDomaineIdDomaine(id);}
 }

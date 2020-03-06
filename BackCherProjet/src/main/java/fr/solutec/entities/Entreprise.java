@@ -11,13 +11,43 @@ public class Entreprise extends Utilisateur {
 	private String telephone;
 	private String logo;
 	private String description;
+	private String siteWeb;
+	private int dateCreation;
+	private String tailleEntreprise;
 	
+	
+	public String getSiteWeb() {
+		return siteWeb;
+	}
+
+	public void setSiteWeb(String siteWeb) {
+		this.siteWeb = siteWeb;
+	}
+
+	public int getDateCreation() {
+		return dateCreation;
+	}
+
+	public void setDateCreation(int dateCreation) {
+		this.dateCreation = dateCreation;
+	}
+
+	public String getTailleEntreprise() {
+		return tailleEntreprise;
+	}
+
+	public void setTailleEntreprise(String tailleEntreprise) {
+		this.tailleEntreprise = tailleEntreprise;
+	}
+
 	public Entreprise() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Entreprise(String mail, String mdp, int statut, String nom, String adresse,
-			int codePostal, String telephone, String logo, String description) {
+
+
+	public Entreprise(String mail, String mdp, int statut, String nom, String adresse, int codePostal, String telephone,
+			String logo, String description, String siteWeb, int dateCreation, String tailleEntreprise) {
 		super(mail, mdp, statut);
 		this.nom = nom;
 		this.adresse = adresse;
@@ -25,6 +55,9 @@ public class Entreprise extends Utilisateur {
 		this.telephone = telephone;
 		this.logo = logo;
 		this.description = description;
+		this.siteWeb = siteWeb;
+		this.dateCreation = dateCreation;
+		this.tailleEntreprise = tailleEntreprise;
 	}
 
 	public String getNom() {
