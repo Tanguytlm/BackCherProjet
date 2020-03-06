@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,10 +28,23 @@ public class ParticulierRest {
 	}
 	
 	@RequestMapping(value = "/particulier", method=RequestMethod.POST)
-	public Particulier saveParticulier(@RequestBody Particulier p) {
-		return particulierRepo.save(p);
+	public Boolean saveParticulier(@RequestBody Particulier p) {
+		
+		Optional<Particulier> particulier  = particulierRepo.findByMail(p.getMail());
+		
+		Particulier par = new Particulier();
+		
+		if (particulier.isPresent()) {
+	
+
+			return false;
+		}else {
+			particulierRepo.save(p);	
+			return true;
+		}		
 		
 	}
+	
 	@RequestMapping(value = "/particuliers", method = RequestMethod.POST)
 	public Particulier getConnexion(@RequestBody Particulier p) {
 		Optional<Particulier> particulier  = particulierRepo.findByMailAndMdp(p.getMail(), p.getMdp());
@@ -41,5 +55,20 @@ public class ParticulierRest {
 		}
 		return pa;
 	}
+	
+	@RequestMapping(value = "/particulier/{id}", method = RequestMethod.PUT)
+	public Particulier editParticulier (@RequestBody Particulier p, @PathVariable Long id) {
+		p.setIdUtilisateur(id);
+		return particulierRepo.save(p);
+	}
+	
+	@RequestMapping(value = "/particulier/{id}", method = RequestMethod.DELETE)
+	public boolean deleteParticulier(@PathVariable Long id){
+		particulierRepo.deleteById(id);
+		return true; }
+	
+	@RequestMapping(value = "/particulier/{id}", method = RequestMethod.GET)
+	public Optional<Particulier> getParticulier(@PathVariable Long id){
+		return particulierRepo.findById(id);}
 	
 }

@@ -29,8 +29,19 @@ public class EntrepriseRest {
 	}
 	
 	@RequestMapping(value = "/entreprise", method=RequestMethod.POST)
-	public Entreprise saveEntreprise(@RequestBody Entreprise e) {
-		return entrepriseRepo.save(e);
+	public Boolean saveEntreprise(@RequestBody Entreprise e) {
+		Optional<Entreprise> entreprise  = entrepriseRepo.findByMailAndMdp(e.getMail(), e.getMdp());
+		
+		Entreprise ent = new Entreprise();
+		
+		if (entreprise.isPresent()) {
+	
+
+			return false;
+		}else {
+			entrepriseRepo.save(e);	
+			return true;
+		}	
 		
 	}
 	
@@ -43,6 +54,11 @@ public class EntrepriseRest {
 	@RequestMapping(value = "/entreprise/{id}", method = RequestMethod.GET)
 	public Optional<Entreprise> getEntreprise(@PathVariable Long id){
 		return entrepriseRepo.findById(id);}
+	
+	@RequestMapping(value = "/entreprise/{id}", method = RequestMethod.DELETE)
+	public boolean deleteEntreprise(@PathVariable Long id){
+		entrepriseRepo.deleteById(id);
+		return true; }
 	
 	@RequestMapping(value = "/entreprises", method = RequestMethod.POST)
 	public Entreprise getConnexion(@RequestBody Entreprise e) {
