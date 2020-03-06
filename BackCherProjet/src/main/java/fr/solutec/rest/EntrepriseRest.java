@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import fr.solutec.dao.EntrepriseRepository;
 import fr.solutec.entities.Entreprise;
-import fr.solutec.entities.Particulier;
 
 
 @RestController @CrossOrigin("*")
