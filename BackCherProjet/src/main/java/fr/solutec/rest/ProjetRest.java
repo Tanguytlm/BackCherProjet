@@ -29,8 +29,8 @@ public class ProjetRest {
 	}
 	
 	@RequestMapping(value = "/projetPropose", method = RequestMethod.GET)
-	public Optional<Projet> getProjet(){
-		return projetRepo.findByStatut(0);}
+	public List<Projet> getProjet(){
+		return (List<Projet>) projetRepo.findByStatut(0);}
 	
 	@RequestMapping(value = "/projet/{id}", method = RequestMethod.DELETE)
 	public boolean deleteProjet(@PathVariable Long id){
