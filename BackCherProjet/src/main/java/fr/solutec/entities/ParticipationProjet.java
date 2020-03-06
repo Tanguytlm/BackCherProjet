@@ -16,6 +16,7 @@ public class ParticipationProjet {
 	private Entreprise entreprise; 
 	@ManyToOne
 	private Projet projet;
+	
 	public Long getIdParticipation() {
 		return idParticipation;
 	}
