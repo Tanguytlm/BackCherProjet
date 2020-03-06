@@ -31,23 +31,23 @@ public class ParticipationRest {
 	}
 	
 	@RequestMapping(value = "participation/entreprise/{id}", method = RequestMethod.GET)
-	public Optional<Participation> getParticipationEntreprise(@PathVariable Long id){
-		return participationRepo.findByEntrepriseIdUtilisateur(id);}
+	public List<Participation> getParticipationEntreprise(@PathVariable Long id){
+		return  (List<Participation>) participationRepo.findByEntrepriseIdUtilisateur(id);}
 	
 	@RequestMapping(value = "participation/entreprise/{id}/{statut}", method = RequestMethod.GET)
-	public Optional<Participation> getParticipationEntrepriseStatut(@PathVariable Long id,@PathVariable int statut){
-		return participationRepo.findByEntrepriseIdUtilisateurAndProjetStatut(id,statut);}
+	public List<Participation> getParticipationEntrepriseStatut(@PathVariable Long id,@PathVariable int statut){
+		return (List<Participation>) participationRepo.findByEntrepriseIdUtilisateurAndProjetStatut(id,statut);}
 	
 	@RequestMapping(value = "participation/particulier/{id}/{statut}", method = RequestMethod.GET)
-	public Optional<Participation> getParticipationParticulierStatut(@PathVariable Long id,@PathVariable int statut){
-		return participationRepo.findByParticulierIdUtilisateurAndProjetStatut(id,statut);}
+	public List<Participation> getParticipationParticulierStatut(@PathVariable Long id,@PathVariable int statut){
+		return (List<Participation>) participationRepo.findByParticulierIdUtilisateurAndProjetStatut(id,statut);}
 	
 	@RequestMapping(value = "participation/particulier/{id}", method = RequestMethod.GET)
-	public Optional<Participation> getParticipationParticulier(@PathVariable Long id){
-		return participationRepo.findByParticulierIdUtilisateur(id);}
+	public List<Participation> getParticipationParticulier(@PathVariable Long id){
+		return (List<Participation>) participationRepo.findByParticulierIdUtilisateur(id);}
 	
 	@RequestMapping(value = "participation/projet/{id}", method = RequestMethod.GET)
-	public Optional<Participation> getParticipationProjet(@PathVariable Long id){
-		return participationRepo.findByProjetIdProjet(id);}
+	public List<Participation> getParticipationProjet(@PathVariable Long id){
+		return (List<Participation>) participationRepo.findByProjetIdProjet(id);}
 	
 }
