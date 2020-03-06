@@ -9,7 +9,6 @@ public class Particulier extends Utilisateur {
 	private String nom;
 	private String prenom;
 	private int age;
-	private String interet;
 	private String bio;
 	private String photo;
 	
@@ -19,13 +18,12 @@ public class Particulier extends Utilisateur {
 	}
 
 
-	public Particulier(String mail, String mdp, int statut, String nom, String prenom, int age, String interet,
+	public Particulier(String mail, String mdp, int statut, String nom, String prenom, int age,
 			String bio, String photo) {
 		super(mail, mdp, statut);
 		this.nom = nom;
 		this.prenom = prenom;
 		this.age = age;
-		this.interet = interet;
 		this.bio = bio;
 		this.photo = photo;
 	}
@@ -68,16 +66,6 @@ public class Particulier extends Utilisateur {
 
 	public void setAge(int age) {
 		this.age = age;
-	}
-
-
-	public String getInteret() {
-		return interet;
-	}
-
-
-	public void setInteret(String interet) {
-		this.interet = interet;
 	}
 
 

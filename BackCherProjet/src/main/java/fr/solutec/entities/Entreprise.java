@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 public class Entreprise extends Utilisateur {
 	
 	private String nom;
-	private String secteurActivite;
 	private String adresse;
 	private int codePostal;
 	private String telephone;
@@ -17,11 +16,10 @@ public class Entreprise extends Utilisateur {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Entreprise(String mail, String mdp, int statut, String nom, String secteurActivite, String adresse,
+	public Entreprise(String mail, String mdp, int statut, String nom, String adresse,
 			int codePostal, String telephone, String logo, String description) {
 		super(mail, mdp, statut);
 		this.nom = nom;
-		this.secteurActivite = secteurActivite;
 		this.adresse = adresse;
 		this.codePostal = codePostal;
 		this.telephone = telephone;
@@ -37,13 +35,6 @@ public class Entreprise extends Utilisateur {
 		this.nom = nom;
 	}
 
-	public String getSecteurActivite() {
-		return secteurActivite;
-	}
-
-	public void setSecteurActivite(String secteurActivite) {
-		this.secteurActivite = secteurActivite;
-	}
 
 	public String getAdresse() {
 		return adresse;
