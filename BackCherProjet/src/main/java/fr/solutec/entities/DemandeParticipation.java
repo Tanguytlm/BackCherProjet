@@ -13,8 +13,6 @@ public class DemandeParticipation {
 	@ManyToOne
 	private Particulier particulier;
 	@ManyToOne
-	private Entreprise entreprise; 
-	@ManyToOne
 	private Projet projet;
 	
 	public Long getIdParticipation() {
@@ -29,12 +27,7 @@ public class DemandeParticipation {
 	public void setParticulier(Particulier particulier) {
 		this.particulier = particulier;
 	}
-	public Entreprise getEntreprise() {
-		return entreprise;
-	}
-	public void setEntreprise(Entreprise entreprise) {
-		this.entreprise = entreprise;
-	}
+
 	public Projet getProjet() {
 		return projet;
 	}
@@ -44,17 +37,17 @@ public class DemandeParticipation {
 	public DemandeParticipation() {
 		super();
 	}
-	public DemandeParticipation(Particulier particulier, Entreprise entreprise, Projet projet) {
+	public DemandeParticipation(Particulier particulier,  Projet projet) {
 		super();
 		this.particulier = particulier;
-		this.entreprise = entreprise;
 		this.projet = projet;
 	}
 	@Override
 	public String toString() {
-		return "DemandeParticipation [idParticipation=" + idParticipation + ", particulier=" + particulier
-				+ ", entreprise=" + entreprise + ", projet=" + projet + "]";
+		return "DemandeParticipation [idParticipation=" + idParticipation + ", particulier=" + particulier + ", projet="
+				+ projet + "]";
 	}
+
 	
 	
 }

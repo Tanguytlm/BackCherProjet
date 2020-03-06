@@ -31,10 +31,10 @@ public class DomaineProjetRest {
 	}
 	
 	@RequestMapping(value = "domaineProjet/{id}", method = RequestMethod.GET)
-	public Optional<DomaineProjet> getDomaineProjet(@PathVariable Long id){
-		return DPrR.findByProjetIdProjet(id);}
+	public List<DomaineProjet> getDomaineProjet(@PathVariable Long id){
+		return (List<DomaineProjet>) DPrR.findByProjetIdProjet(id);}
 	
 	@RequestMapping(value = "projetDomaine/{id}", method = RequestMethod.GET)
-	public Optional<DomaineProjet> getProjetDomaine(@PathVariable Long id){
-		return DPrR.findByDomaineIdDomaine(id);}
+	public List<DomaineProjet> getProjetDomaine(@PathVariable Long id){
+		return (List<DomaineProjet>) DPrR.findByDomaineIdDomaine(id);}
 }

@@ -31,12 +31,12 @@ public class DomaineEntrepriseRest {
 	}
 	
 	@RequestMapping(value = "domaineEntreprise/{id}", method = RequestMethod.GET)
-	public Optional<DomaineEntreprise> getDomaineEntreprise(@PathVariable Long id){
-		return DER.findByEntrepriseIdUtilisateur(id);}
+	public List<DomaineEntreprise> getDomaineEntreprise(@PathVariable Long id){
+		return (List<DomaineEntreprise>) DER.findByEntrepriseIdUtilisateur(id);}
 	
 	@RequestMapping(value = "entrepriseDomaine/{id}", method = RequestMethod.GET)
-	public Optional<DomaineEntreprise> getEntrepriseDomaine(@PathVariable Long id){
-		return DER.findByDomaineIdDomaine(id);}
+	public List<DomaineEntreprise> getEntrepriseDomaine(@PathVariable Long id){
+		return (List<DomaineEntreprise>) DER.findByDomaineIdDomaine(id);}
 	
 	
 	
