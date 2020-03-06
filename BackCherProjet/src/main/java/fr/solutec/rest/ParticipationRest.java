@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.solutec.dao.ParticipationRepository;
-import fr.solutec.entities.ParticipationProjet;
+import fr.solutec.entities.Participation;
 
 @RestController @CrossOrigin("*")
 public class ParticipationRest {
@@ -20,34 +20,34 @@ public class ParticipationRest {
 	private ParticipationRepository participationRepo;
 	
 	@RequestMapping(value = "/participation", method=RequestMethod.POST)
-	public ParticipationProjet saveParticipation(@RequestBody ParticipationProjet p) {
+	public Participation saveParticipation(@RequestBody Participation p) {
 		return participationRepo.save(p);
 	}
 	
 	@RequestMapping(value = "/participation", method=RequestMethod.GET)
-	public List<ParticipationProjet> getAll(){
+	public List<Participation> getAll(){
 		
-		return (List<ParticipationProjet>) participationRepo.findAll();
+		return (List<Participation>) participationRepo.findAll();
 	}
 	
 	@RequestMapping(value = "participation/entreprise/{id}", method = RequestMethod.GET)
-	public Optional<ParticipationProjet> getParticipationEntreprise(@PathVariable Long id){
-		return participationRepo.findByEntrepriseIdUtilisateur(id);}
+	public List<Participation> getParticipationEntreprise(@PathVariable Long id){
+		return  (List<Participation>) participationRepo.findByEntrepriseIdUtilisateur(id);}
 	
 	@RequestMapping(value = "participation/entreprise/{id}/{statut}", method = RequestMethod.GET)
-	public Optional<ParticipationProjet> getParticipationEntrepriseStatut(@PathVariable Long id,@PathVariable int statut){
-		return participationRepo.findByEntrepriseIdUtilisateurAndProjetStatut(id,statut);}
+	public List<Participation> getParticipationEntrepriseStatut(@PathVariable Long id,@PathVariable int statut){
+		return (List<Participation>) participationRepo.findByEntrepriseIdUtilisateurAndProjetStatut(id,statut);}
 	
 	@RequestMapping(value = "participation/particulier/{id}/{statut}", method = RequestMethod.GET)
-	public Optional<ParticipationProjet> getParticipationParticulierStatut(@PathVariable Long id,@PathVariable int statut){
-		return participationRepo.findByParticulierIdUtilisateurAndProjetStatut(id,statut);}
+	public List<Participation> getParticipationParticulierStatut(@PathVariable Long id,@PathVariable int statut){
+		return (List<Participation>) participationRepo.findByParticulierIdUtilisateurAndProjetStatut(id,statut);}
 	
 	@RequestMapping(value = "participation/particulier/{id}", method = RequestMethod.GET)
-	public Optional<ParticipationProjet> getParticipationParticulier(@PathVariable Long id){
-		return participationRepo.findByParticulierIdUtilisateur(id);}
+	public List<Participation> getParticipationParticulier(@PathVariable Long id){
+		return (List<Participation>) participationRepo.findByParticulierIdUtilisateur(id);}
 	
 	@RequestMapping(value = "participation/projet/{id}", method = RequestMethod.GET)
-	public Optional<ParticipationProjet> getParticipationProjet(@PathVariable Long id){
-		return participationRepo.findByProjetIdProjet(id);}
+	public List<Participation> getParticipationProjet(@PathVariable Long id){
+		return (List<Participation>) participationRepo.findByProjetIdProjet(id);}
 	
 }

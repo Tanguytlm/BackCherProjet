@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class ParticipationProjet {
+public class DemandeParticipation {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idParticipation;
 	@ManyToOne
@@ -41,22 +41,20 @@ public class ParticipationProjet {
 	public void setProjet(Projet projet) {
 		this.projet = projet;
 	}
-	@Override
-	public String toString() {
-		return "ParticipationProjet [idParticipation=" + idParticipation + ", particulier=" + particulier
-				+ ", entreprise=" + entreprise + ", projet=" + projet + "]";
+	public DemandeParticipation() {
+		super();
 	}
-	public ParticipationProjet(Particulier particulier, Entreprise entreprise, Projet projet) {
+	public DemandeParticipation(Particulier particulier, Entreprise entreprise, Projet projet) {
 		super();
 		this.particulier = particulier;
 		this.entreprise = entreprise;
 		this.projet = projet;
 	}
-	public ParticipationProjet() {
-		super();
+	@Override
+	public String toString() {
+		return "DemandeParticipation [idParticipation=" + idParticipation + ", particulier=" + particulier
+				+ ", entreprise=" + entreprise + ", projet=" + projet + "]";
 	}
-	
-	
 	
 	
 }

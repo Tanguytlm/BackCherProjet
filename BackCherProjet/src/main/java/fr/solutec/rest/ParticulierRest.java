@@ -67,4 +67,8 @@ public class ParticulierRest {
 		particulierRepo.deleteById(id);
 		return true; }
 	
+	@RequestMapping(value = "/particulier/{id}", method = RequestMethod.GET)
+	public Optional<Particulier> getParticulier(@PathVariable Long id){
+		return particulierRepo.findById(id);}
+	
 }
