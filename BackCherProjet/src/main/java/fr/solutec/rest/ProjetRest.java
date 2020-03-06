@@ -5,12 +5,14 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.solutec.dao.ProjetRepository;
+import fr.solutec.entities.Entreprise;
 import fr.solutec.entities.Projet;
 @RestController @CrossOrigin("*")
 public class ProjetRest {
@@ -29,4 +31,15 @@ public class ProjetRest {
 	@RequestMapping(value = "/projetPropose", method = RequestMethod.GET)
 	public Optional<Projet> getProjet(){
 		return projetRepo.findByStatut(0);}
+	
+	@RequestMapping(value = "/projet/{id}", method = RequestMethod.DELETE)
+	public boolean deleteProjet(@PathVariable Long id){
+		projetRepo.deleteById(id);
+		return true; }
+	
+	@RequestMapping(value = "/projet/{id}", method = RequestMethod.PUT)
+	public Projet editProjet (@RequestBody Projet p, @PathVariable Long id) {
+		p.setIdProjet(id);
+		return projetRepo.save(p);
+	}
 }

@@ -44,6 +44,11 @@ public class EntrepriseRest {
 	public Optional<Entreprise> getEntreprise(@PathVariable Long id){
 		return entrepriseRepo.findById(id);}
 	
+	@RequestMapping(value = "/entreprise/{id}", method = RequestMethod.DELETE)
+	public boolean deleteEntreprise(@PathVariable Long id){
+		entrepriseRepo.deleteById(id);
+		return true; }
+	
 	@RequestMapping(value = "/entreprises", method = RequestMethod.POST)
 	public Entreprise getConnexion(@RequestBody Entreprise e) {
 		Optional<Entreprise> entreprise  = entrepriseRepo.findByMailAndMdp(e.getMail(), e.getMdp());
