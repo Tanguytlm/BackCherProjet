@@ -66,7 +66,7 @@ public class BackCherProjetApplication implements CommandLineRunner{
 		Entreprise e1= new Entreprise("mailEntreprise","motDePasseEntreprise",0,"nomEntreprise","adresseEntreprise",75000,"0652145654",null,"maDescription");
 		entrepriseRepo.save(e1);
 		
-		Projet pr1 = new Projet("nom","descriptif",d.parse("14/07/2018"),d.parse("14/07/2019"),15,e1,"interessement",1);
+		Projet pr1 = new Projet("nom","descriptif",d.parse("14/07/2018"),d.parse("14/07/2019"),15,e1,"interessement",0);
 		projetRepo.save(pr1);
 		
 		ParticipationProjet pa1= new ParticipationProjet(p1,e1,pr1);
