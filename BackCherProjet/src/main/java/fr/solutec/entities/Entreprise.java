@@ -1,5 +1,6 @@
 package fr.solutec.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
@@ -10,6 +11,7 @@ public class Entreprise extends Utilisateur {
 	private int codePostal;
 	private String telephone;
 	private String logo;
+	@Column(length=3000)
 	private String description;
 	private String siteWeb;
 	private int dateCreation;

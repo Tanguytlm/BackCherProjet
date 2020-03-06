@@ -37,7 +37,7 @@ public class DemandeParticipation {
 	public DemandeParticipation() {
 		super();
 	}
-	public DemandeParticipation(Particulier particulier, Entreprise entreprise, Projet projet) {
+	public DemandeParticipation(Particulier particulier,  Projet projet) {
 		super();
 		this.particulier = particulier;
 		this.projet = projet;

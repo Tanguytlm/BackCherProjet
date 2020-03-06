@@ -8,6 +8,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import fr.solutec.dao.DemandeParticipationRepository;
 import fr.solutec.dao.DomaineEntrepriseRepository;
 import fr.solutec.dao.DomaineParticulierRepository;
 import fr.solutec.dao.DomaineProjetRepository;
@@ -17,6 +18,7 @@ import fr.solutec.dao.ParticipationRepository;
 import fr.solutec.dao.ParticulierRepository;
 import fr.solutec.dao.ProjetRepository;
 import fr.solutec.dao.UtilisateurRepository;
+import fr.solutec.entities.DemandeParticipation;
 import fr.solutec.entities.Domaine;
 import fr.solutec.entities.DomaineEntreprise;
 import fr.solutec.entities.DomaineParticulier;
@@ -45,6 +47,8 @@ public class BackCherProjetApplication implements CommandLineRunner{
 	private DomaineEntrepriseRepository DER;
 	@Autowired
 	private DomaineProjetRepository DPrR;
+	@Autowired
+	private DemandeParticipationRepository DPR;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(BackCherProjetApplication.class, args);
@@ -138,6 +142,9 @@ public class BackCherProjetApplication implements CommandLineRunner{
 		DPaR.save(dpa1);
 		DomaineProjet dpr1= new DomaineProjet(d1,pr1);
 		DPrR.save(dpr1);
-
+		
+		DemandeParticipation dp1=new DemandeParticipation(p1,pr1);
+		DPR.save(dp1);
+		
 		
 }}
