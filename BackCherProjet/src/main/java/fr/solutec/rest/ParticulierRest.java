@@ -27,10 +27,24 @@ public class ParticulierRest {
 	}
 	
 	@RequestMapping(value = "/particulier", method=RequestMethod.POST)
-	public Particulier saveParticulier(@RequestBody Particulier p) {
-		return particulierRepo.save(p);
+	public Boolean saveParticulier(@RequestBody Particulier p) {
+		
+		Optional<Particulier> particulier  = particulierRepo.findByMail(p.getMail());
+		
+		Particulier par = new Particulier();
+		
+		if (particulier.isPresent()) {
+	
+
+			return false;
+		}else {
+			//par = particulier.get();
+			particulierRepo.save(p);	
+			return true;
+		}		
 		
 	}
+	
 	@RequestMapping(value = "/particuliers", method = RequestMethod.POST)
 	public Particulier getConnexion(@RequestBody Particulier p) {
 		Optional<Particulier> particulier  = particulierRepo.findByMailAndMdp(p.getMail(), p.getMdp());

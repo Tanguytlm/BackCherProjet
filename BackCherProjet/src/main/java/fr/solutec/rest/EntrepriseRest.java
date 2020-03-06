@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import fr.solutec.dao.EntrepriseRepository;
 import fr.solutec.entities.Entreprise;
+import fr.solutec.entities.Particulier;
 
 
 @RestController @CrossOrigin("*")
@@ -29,8 +30,19 @@ public class EntrepriseRest {
 	}
 	
 	@RequestMapping(value = "/entreprise", method=RequestMethod.POST)
-	public Entreprise saveEntreprise(@RequestBody Entreprise e) {
-		return entrepriseRepo.save(e);
+	public Boolean saveEntreprise(@RequestBody Entreprise e) {
+		Optional<Entreprise> entreprise  = entrepriseRepo.findByMailAndMdp(e.getMail(), e.getMdp());
+		
+		Entreprise ent = new Entreprise();
+		
+		if (entreprise.isPresent()) {
+	
+
+			return false;
+		}else {
+			entrepriseRepo.save(e);	
+			return true;
+		}	
 		
 	}
 	
