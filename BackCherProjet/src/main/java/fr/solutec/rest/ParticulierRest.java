@@ -38,7 +38,6 @@ public class ParticulierRest {
 
 			return false;
 		}else {
-			//par = particulier.get();
 			particulierRepo.save(p);	
 			return true;
 		}		
