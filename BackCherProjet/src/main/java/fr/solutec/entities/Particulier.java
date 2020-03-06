@@ -1,6 +1,10 @@
 package fr.solutec.entities;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 
 @Entity
@@ -8,7 +12,8 @@ public class Particulier extends Utilisateur {
 	
 	private String nom;
 	private String prenom;
-	private int age;
+	@Temporal(TemporalType.DATE)
+	private Date dateNaissance;
 	private String bio;
 	private String photo;
 	
@@ -18,15 +23,37 @@ public class Particulier extends Utilisateur {
 	}
 
 
-	public Particulier(String mail, String mdp, int statut, String nom, String prenom, int age,
-			String bio, String photo) {
+	
+
+
+	public Date getDateNaissance() {
+		return dateNaissance;
+	}
+
+
+
+
+
+	public void setDateNaissance(Date dateNaissance) {
+		this.dateNaissance = dateNaissance;
+	}
+
+
+
+
+
+	public Particulier(String mail, String mdp, int statut, String nom, String prenom, Date dateNaissance, String bio,
+			String photo) {
 		super(mail, mdp, statut);
 		this.nom = nom;
 		this.prenom = prenom;
-		this.age = age;
+		this.dateNaissance = dateNaissance;
 		this.bio = bio;
 		this.photo = photo;
 	}
+
+
+
 
 
 	public String getPhoto() {
@@ -58,15 +85,6 @@ public class Particulier extends Utilisateur {
 		this.prenom = prenom;
 	}
 
-
-	public int getAge() {
-		return age;
-	}
-
-
-	public void setAge(int age) {
-		this.age = age;
-	}
 
 
 	public String getBio() {

@@ -34,6 +34,14 @@ public class ParticipationRest {
 	public Optional<ParticipationProjet> getParticipationEntreprise(@PathVariable Long id){
 		return participationRepo.findByEntrepriseIdUtilisateur(id);}
 	
+	@RequestMapping(value = "participation/entreprise/{id}/{statut}", method = RequestMethod.GET)
+	public Optional<ParticipationProjet> getParticipationEntrepriseStatut(@PathVariable Long id,@PathVariable int statut){
+		return participationRepo.findByEntrepriseIdUtilisateurAndProjetStatut(id,statut);}
+	
+	@RequestMapping(value = "participation/particulier/{id}/{statut}", method = RequestMethod.GET)
+	public Optional<ParticipationProjet> getParticipationParticulierStatut(@PathVariable Long id,@PathVariable int statut){
+		return participationRepo.findByParticulierIdUtilisateurAndProjetStatut(id,statut);}
+	
 	@RequestMapping(value = "participation/particulier/{id}", method = RequestMethod.GET)
 	public Optional<ParticipationProjet> getParticipationParticulier(@PathVariable Long id){
 		return participationRepo.findByParticulierIdUtilisateur(id);}

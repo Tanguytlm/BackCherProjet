@@ -1,6 +1,7 @@
 package fr.solutec.rest;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -25,4 +26,7 @@ public class ProjetRest {
 		return (List<Projet>) projetRepo.findAll();
 	}
 	
+	@RequestMapping(value = "/projetPropose", method = RequestMethod.GET)
+	public Optional<Projet> getProjet(){
+		return projetRepo.findByStatut(0);}
 }

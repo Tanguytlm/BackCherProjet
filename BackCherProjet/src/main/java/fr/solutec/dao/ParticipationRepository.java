@@ -11,4 +11,6 @@ public interface ParticipationRepository extends CrudRepository<ParticipationPro
 	public Optional<ParticipationProjet> findByProjetIdProjet(Long id);
 	public Optional<ParticipationProjet> findByEntrepriseIdUtilisateur(Long id);
 	public Optional<ParticipationProjet> findByParticulierIdUtilisateur(Long id);
+	public Optional<ParticipationProjet> findByParticulierIdUtilisateurAndProjetStatut(Long id,int statut);
+	public Optional<ParticipationProjet> findByEntrepriseIdUtilisateurAndProjetStatut(Long id,int statut);
 }
