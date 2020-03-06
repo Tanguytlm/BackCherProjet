@@ -22,7 +22,7 @@ import fr.solutec.entities.DomaineEntreprise;
 import fr.solutec.entities.DomaineParticulier;
 import fr.solutec.entities.DomaineProjet;
 import fr.solutec.entities.Entreprise;
-import fr.solutec.entities.ParticipationProjet;
+import fr.solutec.entities.Participation;
 import fr.solutec.entities.Particulier;
 import fr.solutec.entities.Projet;
 
@@ -69,7 +69,7 @@ public class BackCherProjetApplication implements CommandLineRunner{
 		Projet pr1 = new Projet("nom","descriptif",d.parse("14/07/2018"),d.parse("14/07/2019"),15,e1,"interessement",0);
 		projetRepo.save(pr1);
 		
-		ParticipationProjet pa1= new ParticipationProjet(p1,e1,pr1);
+		Participation pa1= new Participation(p1,e1,pr1);
 		participationRepo.save(pa1);
 		
 		DomaineEntreprise de1= new DomaineEntreprise(d1,e1);

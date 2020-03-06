@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class ParticipationProjet {
+public class Participation {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idParticipation;
 	@ManyToOne
@@ -46,13 +46,13 @@ public class ParticipationProjet {
 		return "ParticipationProjet [idParticipation=" + idParticipation + ", particulier=" + particulier
 				+ ", entreprise=" + entreprise + ", projet=" + projet + "]";
 	}
-	public ParticipationProjet(Particulier particulier, Entreprise entreprise, Projet projet) {
+	public Participation(Particulier particulier, Entreprise entreprise, Projet projet) {
 		super();
 		this.particulier = particulier;
 		this.entreprise = entreprise;
 		this.projet = projet;
 	}
-	public ParticipationProjet() {
+	public Participation() {
 		super();
 	}
 	
