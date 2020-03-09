@@ -1,6 +1,7 @@
 package fr.solutec.rest;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import fr.solutec.dao.DomaineRepository;
 import fr.solutec.entities.Domaine;
-import fr.solutec.entities.Participation;
 
 @RestController @CrossOrigin("*")
 public class DomaineRest {
@@ -26,6 +26,6 @@ public class DomaineRest {
 	}
 	
 	@RequestMapping(value = "/domaine/{id}", method = RequestMethod.GET)
-	public List<Domaine> getDomaine(@PathVariable Long id){
-		return  (List<Domaine>) domaineRepo.findByIdDomaine(id);}
+	public Optional<Domaine> getDomaine(@PathVariable Long id){
+		return domaineRepo.findById(id);}
 }
