@@ -43,4 +43,9 @@ public class DemandeParticipationRest {
 	@RequestMapping(value = "demandeParticipation/projet/{id}", method = RequestMethod.GET)
 	public List<DemandeParticipation> getDemandeParticipationProjet(@PathVariable Long id){
 		return (List<DemandeParticipation>) demandeParticipationRepo.findByProjetIdProjet(id);}
+	
+	@RequestMapping(value = "/demandeParticipation/{id}", method = RequestMethod.DELETE)
+	public boolean deleteDemandeParticipation(@PathVariable Long id){
+		demandeParticipationRepo.deleteById(id);
+		return true; }
 }
