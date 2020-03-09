@@ -36,6 +36,10 @@ public class DemandeParticipationRest {
 	public List<DemandeParticipation> getDemandeParticipationParticulierStatut(@PathVariable Long id,@PathVariable int statut){
 		return (List<DemandeParticipation>) demandeParticipationRepo.findByParticulierIdUtilisateurAndProjetStatut(id,statut);}
 	
+	@RequestMapping(value = "demandeParticipation/entreprise/{identreprise}/{idprojet}", method = RequestMethod.GET)
+	public List<DemandeParticipation> getDemandeParticipationEntreprise(@PathVariable Long identreprise,@PathVariable Long idprojet){
+		return (List<DemandeParticipation>) demandeParticipationRepo.findByProjetEntrepriseIdUtilisateurAndProjetIdProjet(identreprise,idprojet);}
+	
 	@RequestMapping(value = "demandeParticipation/particulier/{id}", method = RequestMethod.GET)
 	public List<DemandeParticipation> getDemandeParticipationParticulier(@PathVariable Long id){
 		return (List<DemandeParticipation>) demandeParticipationRepo.findByParticulierIdUtilisateur(id);}

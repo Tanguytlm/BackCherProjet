@@ -14,61 +14,63 @@ import org.springframework.web.bind.annotation.RestController;
 import fr.solutec.dao.ParticulierRepository;
 import fr.solutec.entities.Entreprise;
 import fr.solutec.entities.Particulier;
+import fr.solutec.entities.Projet;
 
-@RestController @CrossOrigin("*")
+@RestController
+@CrossOrigin("*")
 public class ParticulierRest {
-	
+
 	@Autowired
 	private ParticulierRepository particulierRepo;
-	
-	@RequestMapping(value = "/particulier", method=RequestMethod.GET)
-	public List<Particulier> getAll(){
-		return (List<Particulier>) particulierRepo.findAll();
-		
-	}
-	
-	@RequestMapping(value = "/particulier", method=RequestMethod.POST)
-	public Boolean saveParticulier(@RequestBody Particulier p) {
-		
-		Optional<Particulier> particulier  = particulierRepo.findByMail(p.getMail());
-		
-		Particulier par = new Particulier();
-		
-		if (particulier.isPresent()) {
-	
 
-			return false;
-		}else {
-			particulierRepo.save(p);	
-			return true;
-		}		
-		
+	@RequestMapping(value = "/particulier", method = RequestMethod.GET)
+	public List<Particulier> getAll() {
+		return (List<Particulier>) particulierRepo.findAll();
+
 	}
-	
+
+	@RequestMapping(value = "/particulier", method = RequestMethod.POST)
+	public Particulier saveParticulier(@RequestBody Particulier p) {
+
+		Optional<Particulier> particulier = particulierRepo.findByMail(p.getMail());
+
+		Particulier par = new Particulier();
+
+		if (particulier.isPresent()) {
+
+			return par;
+		} else {
+			return particulierRepo.save(p);
+		}
+
+	}
+
 	@RequestMapping(value = "/particuliers", method = RequestMethod.POST)
 	public Particulier getConnexion(@RequestBody Particulier p) {
-		Optional<Particulier> particulier  = particulierRepo.findByMailAndMdp(p.getMail(), p.getMdp());
+		Optional<Particulier> particulier = particulierRepo.findByMailAndMdp(p.getMail(), p.getMdp());
 		Particulier pa = new Particulier();
-		if(particulier.isPresent()) {
+		if (particulier.isPresent()) {
 			pa = particulier.get();
 			pa.setMdp("");
 		}
 		return pa;
 	}
-	
+
 	@RequestMapping(value = "/particulier/{id}", method = RequestMethod.PUT)
-	public Particulier editParticulier (@RequestBody Particulier p, @PathVariable Long id) {
+	public Particulier editParticulier(@RequestBody Particulier p, @PathVariable Long id) {
 		p.setIdUtilisateur(id);
 		return particulierRepo.save(p);
 	}
-	
+
 	@RequestMapping(value = "/particulier/{id}", method = RequestMethod.DELETE)
-	public boolean deleteParticulier(@PathVariable Long id){
+	public boolean deleteParticulier(@PathVariable Long id) {
 		particulierRepo.deleteById(id);
-		return true; }
-	
+		return true;
+	}
+
 	@RequestMapping(value = "/particulier/{id}", method = RequestMethod.GET)
-	public Optional<Particulier> getParticulier(@PathVariable Long id){
-		return particulierRepo.findById(id);}
-	
+	public Optional<Particulier> getParticulier(@PathVariable Long id) {
+		return particulierRepo.findById(id);
+	}
+
 }
