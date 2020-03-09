@@ -29,18 +29,17 @@ public class EntrepriseRest {
 	}
 	
 	@RequestMapping(value = "/entreprise", method=RequestMethod.POST)
-	public Boolean saveEntreprise(@RequestBody Entreprise e) {
-		Optional<Entreprise> entreprise  = entrepriseRepo.findByMailAndMdp(e.getMail(), e.getMdp());
+	public Entreprise saveEntreprise(@RequestBody Entreprise e) {
+		Optional<Entreprise> entreprise  = entrepriseRepo.findByMail(e.getMail());
 		
 		Entreprise ent = new Entreprise();
 		
 		if (entreprise.isPresent()) {
 	
 
-			return false;
+			return ent;
 		}else {
-			entrepriseRepo.save(e);	
-			return true;
+			return entrepriseRepo.save(e);	
 		}	
 		
 	}
