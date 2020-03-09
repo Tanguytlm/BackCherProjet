@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import fr.solutec.dao.ProjetRepository;
 import fr.solutec.entities.Entreprise;
+import fr.solutec.entities.Participation;
 import fr.solutec.entities.Projet;
 @RestController @CrossOrigin("*")
 public class ProjetRest {
@@ -42,4 +43,8 @@ public class ProjetRest {
 		p.setIdProjet(id);
 		return projetRepo.save(p);
 	}
+	@RequestMapping(value = "projet/entreprise/{id}/{statut}", method = RequestMethod.GET)
+	public List<Projet> getParticipationEntrepriseStatut(@PathVariable Long id,@PathVariable int statut){
+		return (List<Projet>) projetRepo.findByEntrepriseIdUtilisateurAndStatut(id,statut);}
+	
 }
