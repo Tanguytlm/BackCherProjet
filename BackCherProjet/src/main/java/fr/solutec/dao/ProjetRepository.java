@@ -14,4 +14,5 @@ import fr.solutec.entities.Projet;
 public interface ProjetRepository extends CrudRepository<Projet, Long>{
 	public List<Projet> findByStatut(int statut);
 	public List<Projet> findByEntrepriseIdUtilisateurAndStatut(Long id,int statut);
+	public Optional<Projet> findById(Long id);
 }

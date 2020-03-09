@@ -11,4 +11,5 @@ public interface DemandeParticipationRepository extends CrudRepository<DemandePa
 	public List<DemandeParticipation> findByProjetIdProjet(Long id);
 	public List<DemandeParticipation> findByParticulierIdUtilisateur(Long id);
 	public List<DemandeParticipation> findByParticulierIdUtilisateurAndProjetStatut(Long id,int statut);
+	public List<DemandeParticipation> findByProjetEntrepriseIdUtilisateurAndProjetIdProjet(Long identreprise,Long idprojet);
 }

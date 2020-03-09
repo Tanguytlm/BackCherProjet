@@ -10,6 +10,7 @@ public class Domaine {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idDomaine;
 	private String domaine;
+	
 	public Long getIdDomaine() {
 		return idDomaine;
 	}

@@ -42,6 +42,12 @@ public class ProjetRest {
 	public Projet editProjet (@RequestBody Projet p, @PathVariable Long id) {
 		p.setIdProjet(id);
 		return projetRepo.save(p);
+			
+	}
+	@RequestMapping(value = "/projet/{id}", method = RequestMethod.GET)
+	public Optional<Projet> getProjet (@PathVariable Long id) {
+		return projetRepo.findById(id);
+		
 	}
 	@RequestMapping(value = "projet/entreprise/{id}/{statut}", method = RequestMethod.GET)
 	public List<Projet> getParticipationEntrepriseStatut(@PathVariable Long id,@PathVariable int statut){
