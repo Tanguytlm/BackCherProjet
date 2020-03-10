@@ -10,7 +10,6 @@ public class Entreprise extends Utilisateur {
 	private String adresse;
 	private int codePostal;
 	private String telephone;
-	private String logo;
 	@Column(length=3000)
 	private String description;
 	private String siteWeb;
@@ -48,14 +47,13 @@ public class Entreprise extends Utilisateur {
 
 
 
-	public Entreprise(String mail, String mdp, int statut, String nom, String adresse, int codePostal, String telephone,
-			String logo, String description, String siteWeb, int dateCreation, String tailleEntreprise) {
-		super(mail, mdp, statut);
+	public Entreprise(String mail, String mdp, int statut, byte[] photo, String nom, String adresse, int codePostal, String telephone, 
+			String description, String siteWeb, int dateCreation, String tailleEntreprise) {
+		super(mail, mdp, statut, photo);
 		this.nom = nom;
 		this.adresse = adresse;
 		this.codePostal = codePostal;
 		this.telephone = telephone;
-		this.logo = logo;
 		this.description = description;
 		this.siteWeb = siteWeb;
 		this.dateCreation = dateCreation;
@@ -93,14 +91,6 @@ public class Entreprise extends Utilisateur {
 
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
-	}
-
-	public String getLogo() {
-		return logo;
-	}
-
-	public void setLogo(String logo) {
-		this.logo = logo;
 	}
 
 	public String getDescription() {

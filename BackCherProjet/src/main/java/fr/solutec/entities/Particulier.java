@@ -15,7 +15,6 @@ public class Particulier extends Utilisateur {
 	@Temporal(TemporalType.DATE)
 	private Date dateNaissance;
 	private String bio;
-	private String photo;
 	
 	
 	public Particulier() {
@@ -42,27 +41,12 @@ public class Particulier extends Utilisateur {
 
 
 
-	public Particulier(String mail, String mdp, int statut, String nom, String prenom, Date dateNaissance, String bio,
-			String photo) {
-		super(mail, mdp, statut);
+	public Particulier(String mail, String mdp, int statut, byte[] photo, String nom, String prenom, Date dateNaissance, String bio) {
+		super(mail, mdp, statut, photo);
 		this.nom = nom;
 		this.prenom = prenom;
 		this.dateNaissance = dateNaissance;
 		this.bio = bio;
-		this.photo = photo;
-	}
-
-
-
-
-
-	public String getPhoto() {
-		return photo;
-	}
-
-
-	public void setPhoto(String photo) {
-		this.photo = photo;
 	}
 
 

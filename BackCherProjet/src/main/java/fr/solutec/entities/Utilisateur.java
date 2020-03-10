@@ -1,9 +1,12 @@
 package fr.solutec.entities;
 
+import javax.persistence.Basic;
 import javax.persistence.Column;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
@@ -14,6 +17,11 @@ public class Utilisateur {
 	private String mail;
 	private String mdp;
 	private int statut;
+	
+	@Lob
+	@Basic(fetch = FetchType.LAZY)
+	private byte[] photo;
+	
 	public String getMail() {
 		return mail;
 	}
@@ -38,16 +46,24 @@ public class Utilisateur {
 	public void setStatut(int statut) {
 		this.statut = statut;
 	}
+	
+	public byte[] getPhoto() {
+		return photo;
+	}
+	public void setPhoto(byte[] photo) {
+		this.photo = photo;
+	}
 	@Override
 	public String toString() {
 		return "Utilisateur [idUtilisateur=" + idUtilisateur + ", mail=" + mail + ", mdp=" + mdp + ", statut=" + statut
 				+ "]";
 	}
-	public Utilisateur(String mail, String mdp, int statut) {
+	public Utilisateur(String mail, String mdp, int statut, byte[] photo) {
 		super();
 		this.mail = mail;
 		this.mdp = mdp;
 		this.statut = statut;
+		this.photo = photo;
 	}
 	public Utilisateur() {
 		super();
