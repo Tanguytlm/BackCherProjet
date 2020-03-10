@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import fr.solutec.dao.DomaineProjetRepository;
 import fr.solutec.entities.DomaineProjet;
+import fr.solutec.entities.Projet;
 
 @RestController @CrossOrigin("*")
 public class DomaineProjetRest {
@@ -31,10 +32,15 @@ public class DomaineProjetRest {
 	}
 	
 	@RequestMapping(value = "domaineProjet/{id}", method = RequestMethod.GET)
-	public List<DomaineProjet> getDomaineProjet(@PathVariable Long id){
-		return (List<DomaineProjet>) DPrR.findByProjetIdProjet(id);}
-	
+	public Optional<DomaineProjet> getDomaineProjet(@PathVariable Long id){
+		return DPrR.findByProjetIdProjet(id);}
+	 
 	@RequestMapping(value = "projetDomaine/{id}", method = RequestMethod.GET)
 	public List<DomaineProjet> getProjetDomaine(@PathVariable Long id){
 		return (List<DomaineProjet>) DPrR.findByDomaineIdDomaine(id);}
-}
+	
+	@RequestMapping(value = "/projetDomaine/{id}", method = RequestMethod.PUT)
+	public DomaineProjet editProjetDomaine (@RequestBody DomaineProjet p, @PathVariable Long id) {
+		p.setId(DPrR.findByProjetIdProjet(id).get().getId());
+		return DPrR.save(p);
+}}
