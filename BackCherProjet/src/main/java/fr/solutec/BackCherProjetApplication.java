@@ -14,6 +14,7 @@ import fr.solutec.dao.DomaineParticulierRepository;
 import fr.solutec.dao.DomaineProjetRepository;
 import fr.solutec.dao.DomaineRepository;
 import fr.solutec.dao.EntrepriseRepository;
+import fr.solutec.dao.EtapeProjetRepositary;
 import fr.solutec.dao.ParticipationRepository;
 import fr.solutec.dao.ParticulierRepository;
 import fr.solutec.dao.ProjetRepository;
@@ -24,6 +25,7 @@ import fr.solutec.entities.DomaineEntreprise;
 import fr.solutec.entities.DomaineParticulier;
 import fr.solutec.entities.DomaineProjet;
 import fr.solutec.entities.Entreprise;
+import fr.solutec.entities.EtapeProjet;
 import fr.solutec.entities.Participation;
 import fr.solutec.entities.Particulier;
 import fr.solutec.entities.Projet;
@@ -49,6 +51,8 @@ public class BackCherProjetApplication implements CommandLineRunner {
 	private DomaineProjetRepository DPrR;
 	@Autowired
 	private DemandeParticipationRepository DPR;
+	@Autowired
+	private EtapeProjetRepositary EPR;
 
 	public static void main(String[] args) {
 		SpringApplication.run(BackCherProjetApplication.class, args);
@@ -160,6 +164,8 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		projetRepo.save(proj4);
 		projetRepo.save(proj5);
 
+		EtapeProjet ep1 = new EtapeProjet(d.parse("14/07/2018"), d.parse("14/09/2018"), "Etape test", "description test", proj1);
+		EPR.save(ep1);
 
 		
 		
