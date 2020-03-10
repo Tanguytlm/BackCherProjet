@@ -158,6 +158,7 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		projetRepo.save(proj2);
 		projetRepo.save(proj3);
 		projetRepo.save(proj4);
+		projetRepo.save(proj5);
 
 
 		
