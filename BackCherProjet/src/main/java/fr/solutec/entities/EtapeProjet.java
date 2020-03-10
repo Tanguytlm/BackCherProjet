@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -19,6 +20,8 @@ public class EtapeProjet {
 	private Date dateFin;
 	private String nom;
 	private String description;
+	@ManyToOne
+	private Projet projet;
 	public Long getId() {
 		return id;
 	}
@@ -49,17 +52,29 @@ public class EtapeProjet {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	@Override
-	public String toString() {
-		return "EtapeProjet [id=" + id + ", dateDebut=" + dateDebut + ", dateFin=" + dateFin + ", nom=" + nom
-				+ ", description=" + description + "]";
-	}
-	public EtapeProjet(Date dateDebut, Date dateFin, String nom, String description) {
+	
+	
+	public EtapeProjet(Date dateDebut, Date dateFin, String nom, String description, Projet projet) {
 		super();
 		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;
 		this.nom = nom;
 		this.description = description;
+		this.projet = projet;
+	}
+	@Override
+	public String toString() {
+		return "EtapeProjet [id=" + id + ", dateDebut=" + dateDebut + ", dateFin=" + dateFin + ", nom=" + nom
+				+ ", description=" + description + ", projet=" + projet + "]";
+	}
+	public Projet getProjet() {
+		return projet;
+	}
+	public void setProjet(Projet projet) {
+		this.projet = projet;
+	}
+	public EtapeProjet() {
+		super();
 	}
 	
 }
