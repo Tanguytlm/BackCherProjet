@@ -2,6 +2,7 @@ package fr.solutec.entities;
 
 import java.sql.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,6 +25,7 @@ public class Messages {
 	private Entreprise destinataireE;
 	@ManyToOne
 	private Particulier destinataireP;
+	@Column(length=3000)
 	private String contenu;
 	@CreationTimestamp
 	private Date date;

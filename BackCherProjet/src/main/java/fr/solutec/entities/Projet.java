@@ -2,6 +2,7 @@ package fr.solutec.entities;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,6 +16,7 @@ public class Projet {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idProjet;
 	private String nom;
+	@Column(length=3000)
 	private String descriptif;
 	@Temporal(TemporalType.DATE)
 	private Date dateDebut;
