@@ -71,6 +71,7 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		DateFormat d = new SimpleDateFormat("dd/MM/yyyy");
 		System.out.println("okkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
 		
+		Domaine d0 =new Domaine("Aucun");
 		Domaine d1 =new Domaine("Agriculture, agroalimentaire");
 		Domaine d2 =new Domaine("Armée, sécurité");
 		Domaine d3 =new Domaine("Art, Design");
@@ -101,6 +102,7 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		Domaine d28 =new Domaine("Santé, médical");
 		Domaine d29 =new Domaine("Social, Services à la personne");
 		Domaine d30 =new Domaine("Sport et loisirs");
+		domaineRepo.save(d0);
 		domaineRepo.save(d1);
 		domaineRepo.save(d2);
 		domaineRepo.save(d3);
