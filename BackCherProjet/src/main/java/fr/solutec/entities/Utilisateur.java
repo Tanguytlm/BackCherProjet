@@ -2,7 +2,6 @@ package fr.solutec.entities;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,7 +18,6 @@ public class Utilisateur {
 	private int statut;
 	
 	@Lob
-	@Basic(fetch = FetchType.LAZY)
 	private byte[] photo;
 	
 	public String getMail() {

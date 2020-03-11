@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.solutec.dao.MessagesRepository;
-import fr.solutec.entities.DomaineProjetPropose;
 import fr.solutec.entities.Messages;
 
 @RestController @CrossOrigin("*")
