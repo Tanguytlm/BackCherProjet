@@ -1,6 +1,7 @@
 package fr.solutec.rest;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class EtapeProjetRest {
 	public boolean deleteEtapeProjet(@PathVariable Long id){
 		EtapeProjetRepo.deleteById(id);
 		return true; }
-	@RequestMapping(value = "/EtapeProjet/{id}", method = RequestMethod.PUT)
+	@RequestMapping(value = "/etapeProjet/{id}", method = RequestMethod.PUT)
 	public EtapeProjet editEtapeProjet (@RequestBody EtapeProjet p, @PathVariable Long id) {
 		p.setId(id);
 		return EtapeProjetRepo.save(p);
@@ -35,8 +36,8 @@ public class EtapeProjetRest {
 		}
 	
 	@RequestMapping(value = "/etapeProjet/projet/{id}", method = RequestMethod.GET)
-	public Optional<EtapeProjet> getEtapeProjetProjet (@PathVariable Long id) {
-		return EtapeProjetRepo.findByProjetIdProjet(id);
+	public List<EtapeProjet> getEtapeProjetProjet (@PathVariable Long id) {
+		return (List<EtapeProjet>) EtapeProjetRepo.findByProjetIdProjet(id);
 	}
 	
 	@RequestMapping(value = "/etapeProjet", method = RequestMethod.POST)
