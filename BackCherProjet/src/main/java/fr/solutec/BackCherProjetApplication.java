@@ -154,7 +154,7 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		DPR.save(dp1);
 		
 		Projet proj1 = new Projet("Etude de marché aux puces","descriptif du premeier projet",d.parse("14/07/2018"),d.parse("14/07/2019"),15,e1,"interessement",0);
-		Projet proj2 = new Projet("Construire des avions en carton","descriptif du deuxieme projet ",d.parse("14/07/2018"),d.parse("14/07/2019"),15,e1,"interessement",0);
+		Projet proj2 = new Projet("Construire des avions en carton","descriptif du deuxieme projet ",d.parse("14/07/2018"),d.parse("14/07/2019"),15,e1,"interessement",2);
 		Projet proj3 = new Projet("Manger des sauterelles au repas de midi","descriptif du troisieme rpoejt kjdsfqsdfqsd",d.parse("14/07/2018"),d.parse("14/07/2019"),15,e1,"interessement",0);
 		Projet proj4 = new Projet("Développer une nouvelle gamme de produit pour vaches","descriptif du Quatrième et dernier projet",d.parse("14/07/2018"),d.parse("14/07/2019"),15,e1,"interessement",0);
 		Projet proj5 = new Projet("Concours de lancer de marteaux","descriptif de la competition de lancer",d.parse("14/07/2018"),d.parse("14/07/2019"),15,e1,"interessement",1);
@@ -166,6 +166,12 @@ public class BackCherProjetApplication implements CommandLineRunner {
 
 		EtapeProjet ep1 = new EtapeProjet(d.parse("14/07/2018"), d.parse("14/09/2018"), "Etape test", "description test", proj1);
 		EPR.save(ep1);
+		EtapeProjet ep2 = new EtapeProjet(d.parse("14/03/2020"), d.parse("17/03/2020"), "Etape test", "description test", proj2);
+		EPR.save(ep2);
+		EtapeProjet ep3 = new EtapeProjet(d.parse("14/03/2020"), d.parse("15/03/2020"), "Etape test", "description test", proj2);
+		EPR.save(ep3);
+		EtapeProjet ep4 = new EtapeProjet(d.parse("22/03/2020"), d.parse("27/03/2020"), "Etape test", "description test", proj2);
+		EPR.save(ep4);
 
 		
 		
