@@ -53,4 +53,8 @@ public class ProjetProposeRest {
 	public List<ProjetPropose> getParticipationEntrepriseStatut(@PathVariable Long id,@PathVariable int statut){
 		return (List<ProjetPropose>) projetProposeRepo.findByParticulierIdUtilisateurAndStatut(id,statut);}
 	
+	@RequestMapping(value = "ProjetPropose/entreprise/{id}", method = RequestMethod.GET)
+	public List<ProjetPropose> getParticipationEntreprise(@PathVariable Long id){
+		return (List<ProjetPropose>) projetProposeRepo.findByEntrepriseIdUtilisateur(id);}
+	
 }
