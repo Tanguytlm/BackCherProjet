@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import fr.solutec.dao.DomaineEntrepriseRepository;
 import fr.solutec.entities.DomaineEntreprise;
+import fr.solutec.entities.DomaineProjet;
 
 @RestController @CrossOrigin("*")
 public class DomaineEntrepriseRest {
@@ -31,13 +32,18 @@ public class DomaineEntrepriseRest {
 	}
 	
 	@RequestMapping(value = "domaineEntreprise/{id}", method = RequestMethod.GET)
-	public List<DomaineEntreprise> getDomaineEntreprise(@PathVariable Long id){
-		return (List<DomaineEntreprise>) DER.findByEntrepriseIdUtilisateur(id);}
+	public Optional<DomaineEntreprise> getDomaineEntreprise(@PathVariable Long id){
+		return DER.findByEntrepriseIdUtilisateur(id);}
 	
 	@RequestMapping(value = "entrepriseDomaine/{id}", method = RequestMethod.GET)
 	public List<DomaineEntreprise> getEntrepriseDomaine(@PathVariable Long id){
 		return (List<DomaineEntreprise>) DER.findByDomaineIdDomaine(id);}
 	
+	@RequestMapping(value = "/entrepriseDomaine/{id}", method = RequestMethod.PUT)
+	public DomaineEntreprise editEntrepriseDomaine (@RequestBody DomaineEntreprise p, @PathVariable Long id) {
+		p.setId(DER.findByEntrepriseIdUtilisateur(id).get().getId());
+		return DER.save(p);
+		}
 	
 	
 }

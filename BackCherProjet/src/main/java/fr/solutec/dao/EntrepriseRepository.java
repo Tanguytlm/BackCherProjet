@@ -9,5 +9,5 @@ import fr.solutec.entities.Entreprise;
 
 public interface EntrepriseRepository extends CrudRepository<Entreprise, Long> {
 	public Optional<Entreprise> findByMailAndMdp(String mail,String mdp);
-	public List<Entreprise> findByMail(String mail);
+	public Optional<Entreprise> findByMail(String mail);
 }

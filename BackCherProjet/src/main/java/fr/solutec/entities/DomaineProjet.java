@@ -14,6 +14,7 @@ public class DomaineProjet {
 	private Domaine domaine;
 	@ManyToOne
 	private Projet projet;
+	
 	public Long getId() {
 		return id;
 	}

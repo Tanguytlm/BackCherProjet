@@ -14,6 +14,7 @@ import fr.solutec.dao.DomaineParticulierRepository;
 import fr.solutec.dao.DomaineProjetRepository;
 import fr.solutec.dao.DomaineRepository;
 import fr.solutec.dao.EntrepriseRepository;
+import fr.solutec.dao.EtapeProjetRepositary;
 import fr.solutec.dao.ParticipationRepository;
 import fr.solutec.dao.ParticulierRepository;
 import fr.solutec.dao.ProjetRepository;
@@ -24,12 +25,13 @@ import fr.solutec.entities.DomaineEntreprise;
 import fr.solutec.entities.DomaineParticulier;
 import fr.solutec.entities.DomaineProjet;
 import fr.solutec.entities.Entreprise;
+import fr.solutec.entities.EtapeProjet;
 import fr.solutec.entities.Participation;
 import fr.solutec.entities.Particulier;
 import fr.solutec.entities.Projet;
 
 @SpringBootApplication
-public class BackCherProjetApplication implements CommandLineRunner{
+public class BackCherProjetApplication implements CommandLineRunner {
 
 	@Autowired
 	private ParticulierRepository particulierRepo;
@@ -49,9 +51,14 @@ public class BackCherProjetApplication implements CommandLineRunner{
 	private DomaineProjetRepository DPrR;
 	@Autowired
 	private DemandeParticipationRepository DPR;
-	
+	@Autowired
+	private EtapeProjetRepositary EPR;
+
 	public static void main(String[] args) {
 		SpringApplication.run(BackCherProjetApplication.class, args);
+		
+	
+		
 		System.out.println("finishhhhhhhhhhhhhhhhhhhhhhhhhh");
 
 	}
@@ -124,10 +131,10 @@ public class BackCherProjetApplication implements CommandLineRunner{
 
 
 		
-		 Particulier p1= new Particulier("monMail@serveur.com","monMotDePasse",1,"monNom","monPrenom",d.parse("27/09/1996"),null,null);
+		Particulier p1= new Particulier("p","p",1,null,"monNom","monPrenom",d.parse("27/09/1996"),null);
 		particulierRepo.save(p1);
 		
-		Entreprise e1= new Entreprise("mailEntreprise","motDePasseEntreprise",0,"nomEntreprise","adresseEntreprise",75000,"0652145654",null,"maDescription","monsite.com",2010,"moins de 15 employés");
+		Entreprise e1= new Entreprise("e","e",0,null,"nomEntreprise","adresseEntreprise",75000,"0652145654","maDescription","monsite.com",2010,"moins de 15 employés");
 		entrepriseRepo.save(e1);
 		
 		Projet pr1 = new Projet("nom","descriptif",d.parse("14/07/2018"),d.parse("14/07/2019"),15,e1,"interessement",0);
@@ -146,5 +153,23 @@ public class BackCherProjetApplication implements CommandLineRunner{
 		DemandeParticipation dp1=new DemandeParticipation(p1,pr1);
 		DPR.save(dp1);
 		
+		Projet proj1 = new Projet("Etude de marché aux puces","descriptif du premeier projet",d.parse("14/07/2018"),d.parse("14/07/2019"),15,e1,"interessement",0);
+		Projet proj2 = new Projet("Construire des avions en carton","descriptif du deuxieme projet ",d.parse("14/07/2018"),d.parse("14/07/2019"),15,e1,"interessement",0);
+		Projet proj3 = new Projet("Manger des sauterelles au repas de midi","descriptif du troisieme rpoejt kjdsfqsdfqsd",d.parse("14/07/2018"),d.parse("14/07/2019"),15,e1,"interessement",0);
+		Projet proj4 = new Projet("Développer une nouvelle gamme de produit pour vaches","descriptif du Quatrième et dernier projet",d.parse("14/07/2018"),d.parse("14/07/2019"),15,e1,"interessement",0);
+		Projet proj5 = new Projet("Concours de lancer de marteaux","descriptif de la competition de lancer",d.parse("14/07/2018"),d.parse("14/07/2019"),15,e1,"interessement",1);
+		projetRepo.save(proj1);
+		projetRepo.save(proj2);
+		projetRepo.save(proj3);
+		projetRepo.save(proj4);
+		projetRepo.save(proj5);
+
+		EtapeProjet ep1 = new EtapeProjet(d.parse("14/07/2018"), d.parse("14/09/2018"), "Etape test", "description test", proj1);
+		EPR.save(ep1);
+
 		
-}}
+		
+		
+		
+}
+}
