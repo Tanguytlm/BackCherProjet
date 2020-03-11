@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.solutec.dao.DomaineParticulierRepository;
+import fr.solutec.entities.DomaineEntreprise;
 import fr.solutec.entities.DomaineParticulier;
 
 @RestController @CrossOrigin("*")
@@ -37,4 +38,10 @@ public class DomaineParticulierRest {
 	@RequestMapping(value = "particulierDomaine/{id}", method = RequestMethod.GET)
 	public List<DomaineParticulier> getParticulierDomaine(@PathVariable Long id){
 		return (List<DomaineParticulier>) DPaR.findByDomaineIdDomaine(id);}
+	
+	@RequestMapping(value = "/particulierDomaine/{id}", method = RequestMethod.PUT)
+	public DomaineParticulier editParticuliereDomaine (@RequestBody DomaineParticulier p, @PathVariable Long id) {
+		p.setId(id);
+		return DPaR.save(p);
+		}
 }
