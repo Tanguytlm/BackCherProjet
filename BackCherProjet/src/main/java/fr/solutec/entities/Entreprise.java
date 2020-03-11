@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 @Entity
 public class Entreprise extends Utilisateur {
 	
+	@Column(unique = true)
 	private String nom;
 	private String adresse;
 	private int codePostal;

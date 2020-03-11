@@ -31,10 +31,11 @@ public class EntrepriseRest {
 	@RequestMapping(value = "/entreprise", method=RequestMethod.POST)
 	public Entreprise saveEntreprise(@RequestBody Entreprise e) {
 		Optional<Entreprise> entreprise  = entrepriseRepo.findByMail(e.getMail());
+		Optional<Entreprise> entreprise2  = entrepriseRepo.findByNom(e.getNom());
 		
 		Entreprise ent = new Entreprise();
 		
-		if (entreprise.isPresent()) {
+		if (entreprise.isPresent() || entreprise2.isPresent() ) {
 	
 
 			return ent;
