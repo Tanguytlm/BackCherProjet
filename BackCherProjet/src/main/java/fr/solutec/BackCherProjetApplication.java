@@ -15,10 +15,10 @@ import fr.solutec.dao.DomaineProjetRepository;
 import fr.solutec.dao.DomaineRepository;
 import fr.solutec.dao.EntrepriseRepository;
 import fr.solutec.dao.EtapeProjetRepositary;
+import fr.solutec.dao.MessagesRepository;
 import fr.solutec.dao.ParticipationRepository;
 import fr.solutec.dao.ParticulierRepository;
 import fr.solutec.dao.ProjetRepository;
-import fr.solutec.dao.UtilisateurRepository;
 import fr.solutec.entities.DemandeParticipation;
 import fr.solutec.entities.Domaine;
 import fr.solutec.entities.DomaineEntreprise;
@@ -26,6 +26,7 @@ import fr.solutec.entities.DomaineParticulier;
 import fr.solutec.entities.DomaineProjet;
 import fr.solutec.entities.Entreprise;
 import fr.solutec.entities.EtapeProjet;
+import fr.solutec.entities.Messages;
 import fr.solutec.entities.Participation;
 import fr.solutec.entities.Particulier;
 import fr.solutec.entities.Projet;
@@ -53,6 +54,8 @@ public class BackCherProjetApplication implements CommandLineRunner {
 	private DemandeParticipationRepository DPR;
 	@Autowired
 	private EtapeProjetRepositary EPR;
+	@Autowired
+	private MessagesRepository messagesRepo;
 
 	public static void main(String[] args) {
 		SpringApplication.run(BackCherProjetApplication.class, args);
@@ -172,8 +175,11 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		EPR.save(ep3);
 		EtapeProjet ep4 = new EtapeProjet(d.parse("22/03/2020"), d.parse("27/03/2020"), "Etape test", "description test", proj2);
 		EPR.save(ep4);
-
 		
+		Messages mes1 = new Messages(proj2, null, p1, null, null, "ceci est un message d'un particulier à un projet !");
+		messagesRepo.save(mes1);
+		Messages mes2 = new Messages(null, null, p1, e1, null, "ceci est un message d'un particulier à une entreprise !");
+		messagesRepo.save(mes2);
 		
 		
 		
