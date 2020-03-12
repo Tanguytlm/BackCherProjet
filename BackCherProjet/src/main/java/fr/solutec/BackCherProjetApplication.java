@@ -141,6 +141,10 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		
 		Entreprise e1= new Entreprise("e","e",0,null,"nomEntreprise","adresseEntreprise",75000,"0652145654","maDescription","monsite.com",2010,"moins de 15 employés");
 		entrepriseRepo.save(e1);
+		Entreprise e2= new Entreprise("ez","ez",0,null,"Les laveurs de carreaux de Malakoff","12 rue de Malakoff",75000,"0652145654","maDescription","monsite.com",2010,"moins de 15 employés");
+		entrepriseRepo.save(e2);
+		Entreprise e3= new Entreprise("ea","ea",0,null,"Le vendeur de tacos d'en face","36 rue de l'esic",75000,"0652145654","maDescription","monsite.com",2010,"moins de 15 employés");
+		entrepriseRepo.save(e3);
 		
 		Projet pr1 = new Projet("nom","descriptif",d.parse("14/07/2018"),d.parse("14/07/2019"),15,e1,"interessement",0);
 		projetRepo.save(pr1);
@@ -182,12 +186,14 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		messagesRepo.save(mes1);
 		Messages mes2 = new Messages(null, null, p1, e1, null, "ceci est un message d'un particulier à une entreprise !");
 		messagesRepo.save(mes2);
-		Messages mes3 = new Messages(null, null, p1, e1, null, "ceci est un message a destination du particulier 1!");
+		Messages mes3 = new Messages(null, null, p1, e1, null, "ceci est un message a la meilleure des entreprises!");
 		messagesRepo.save(mes3);
 		Messages mes4 = new Messages(null, e1, null, null, p1, "ceci est un message a destination du particulier 1!");
 		messagesRepo.save(mes4);
 		Messages mes5 = new Messages(null, e1,null , null, p1, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
 		messagesRepo.save(mes5);
+		Messages mes6 = new Messages(proj2, e1, null, null, null, "ceci est un message d'une entreprise à un projet !");
+		messagesRepo.save(mes6);
 		
 		
 		
