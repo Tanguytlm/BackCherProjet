@@ -162,8 +162,26 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		
 		DomaineEntreprise de1= new DomaineEntreprise(d1,e1);
 		DER.save(de1);
+		DomaineEntreprise de2= new DomaineEntreprise(d2,e1);
+		DER.save(de2);
+		DomaineEntreprise de3= new DomaineEntreprise(d3,e1);
+		DER.save(de3);
+		DomaineEntreprise de4= new DomaineEntreprise(d0,e1);
+		DER.save(de4);
+		DomaineEntreprise de5= new DomaineEntreprise(d0,e1);
+		DER.save(de4);
+		
 		DomaineParticulier dpa1= new DomaineParticulier(d1,p1);
 		DPaR.save(dpa1);
+		DomaineParticulier dpa2= new DomaineParticulier(d2,p1);
+		DPaR.save(dpa2);
+		DomaineParticulier dpa3= new DomaineParticulier(d3,p1);
+		DPaR.save(dpa3);
+		DomaineParticulier dpa4= new DomaineParticulier(d4,p1);
+		DPaR.save(dpa4);
+		DomaineParticulier dpa5= new DomaineParticulier(d5,p1);
+		DPaR.save(dpa5);
+		
 		DomaineProjet dpr1= new DomaineProjet(d1,pr1);
 		DPrR.save(dpr1);
 		
