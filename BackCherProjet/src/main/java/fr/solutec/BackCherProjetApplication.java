@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import fr.solutec.dao.DemandeParticipationRepository;
 import fr.solutec.dao.DomaineEntrepriseRepository;
 import fr.solutec.dao.DomaineParticulierRepository;
+import fr.solutec.dao.DomaineProjetProposeRepositary;
 import fr.solutec.dao.DomaineProjetRepository;
 import fr.solutec.dao.DomaineRepository;
 import fr.solutec.dao.EntrepriseRepository;
@@ -18,18 +19,21 @@ import fr.solutec.dao.EtapeProjetRepositary;
 import fr.solutec.dao.MessagesRepository;
 import fr.solutec.dao.ParticipationRepository;
 import fr.solutec.dao.ParticulierRepository;
+import fr.solutec.dao.ProjetProposeRepository;
 import fr.solutec.dao.ProjetRepository;
 import fr.solutec.entities.DemandeParticipation;
 import fr.solutec.entities.Domaine;
 import fr.solutec.entities.DomaineEntreprise;
 import fr.solutec.entities.DomaineParticulier;
 import fr.solutec.entities.DomaineProjet;
+import fr.solutec.entities.DomaineProjetPropose;
 import fr.solutec.entities.Entreprise;
 import fr.solutec.entities.EtapeProjet;
 import fr.solutec.entities.Messages;
 import fr.solutec.entities.Participation;
 import fr.solutec.entities.Particulier;
 import fr.solutec.entities.Projet;
+import fr.solutec.entities.ProjetPropose;
 
 @SpringBootApplication
 public class BackCherProjetApplication implements CommandLineRunner {
@@ -51,11 +55,15 @@ public class BackCherProjetApplication implements CommandLineRunner {
 	@Autowired
 	private DomaineProjetRepository DPrR;
 	@Autowired
+	private DomaineProjetProposeRepositary DPPR;
+	@Autowired
 	private DemandeParticipationRepository DPR;
 	@Autowired
 	private EtapeProjetRepositary EPR;
 	@Autowired
 	private MessagesRepository messagesRepo;
+	@Autowired
+	private ProjetProposeRepository PPR;
 
 	public static void main(String[] args) {
 		SpringApplication.run(BackCherProjetApplication.class, args);
@@ -195,7 +203,10 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		Messages mes6 = new Messages(proj2, e1, null, null, null, "ceci est un message d'une entreprise à un projet !");
 		messagesRepo.save(mes6);
 		
-		
+		ProjetPropose pp1 = new ProjetPropose("ezqgea", "test", d.parse("22/03/2020"),d.parse("22/04/2020"), 15, e1,p1, "tada", 0);
+		PPR.save(pp1);
+		DomaineProjetPropose dpp1= new DomaineProjetPropose(d5, pp1);
+		DPPR.save(dpp1);
 		
 }
 }
