@@ -26,23 +26,25 @@ public class DomaineProjetPropose {
 	public void setDomaine(Domaine domaine) {
 		this.domaine = domaine;
 	}
-	public ProjetPropose getProjet() {
+	public ProjetPropose getProjetPropose() {
 		return projetPropose;
 	}
-	public void setProjet(ProjetPropose projet) {
-		this.projetPropose = projet;
+	public void setProjetPropose(ProjetPropose projetPropose) {
+		this.projetPropose = projetPropose;
 	}
 	@Override
 	public String toString() {
-		return "DomaineProjetPropose [id=" + id + ", domaine=" + domaine + ", projet=" + projetPropose + "]";
+		return "DomaineProjetPropose [domaine=" + domaine + ", projetPropose=" + projetPropose + "]";
 	}
 	public DomaineProjetPropose() {
 		super();
 	}
-	public DomaineProjetPropose(Domaine domaine, ProjetPropose projet) {
+	public DomaineProjetPropose(Domaine domaine, ProjetPropose projetPropose) {
 		super();
 		this.domaine = domaine;
-		this.projetPropose = projet;
+		this.projetPropose = projetPropose;
 	}
+
+	
 	
 }
