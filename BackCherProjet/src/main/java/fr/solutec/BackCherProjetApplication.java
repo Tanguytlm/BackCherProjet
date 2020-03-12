@@ -249,5 +249,16 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		DPrR.save(dppp4);
 		DomaineProjet dppp5= new DomaineProjet(d0, proj1);
 		DPrR.save(dppp5);
+		
+		DomaineProjet dppp6= new DomaineProjet(d4, pr1);
+		DPrR.save(dppp6);
+		DomaineProjet dppp7= new DomaineProjet(d5, pr1);
+		DPrR.save(dppp7);
+		DomaineProjet dppp8= new DomaineProjet(d0, pr1);
+		DPrR.save(dppp8);
+		DomaineProjet dppp9= new DomaineProjet(d0, pr1);
+		DPrR.save(dppp9);
+		DomaineProjet dppp10= new DomaineProjet(d0, pr1);
+		DPrR.save(dppp10);
 }
 }
