@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import fr.solutec.dao.ParticipationRepository;
 import fr.solutec.entities.Participation;
+import fr.solutec.entities.Particulier;
 
 @RestController @CrossOrigin("*")
 public class ParticipationRest {
@@ -49,5 +50,6 @@ public class ParticipationRest {
 	@RequestMapping(value = "participation/projet/{id}", method = RequestMethod.GET)
 	public List<Participation> getParticipationProjet(@PathVariable Long id){
 		return (List<Participation>) participationRepo.findByProjetIdProjet(id);}
+	
 	
 }
