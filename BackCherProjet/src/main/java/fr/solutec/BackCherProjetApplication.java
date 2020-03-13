@@ -145,121 +145,135 @@ public class BackCherProjetApplication implements CommandLineRunner {
 
 
 		
-		Particulier p1= new Particulier("p","p",1,null,"monNom","monPrenom",d.parse("27/09/1996"),null);
+		Particulier p1= new Particulier("p","p",1,null,"Bean","Arthur",d.parse("27/09/1996"),"jeune agronôme diplomé de l'université agricole de Beynes recherchant des missions pour améliorer sa connaissance de la sphère bovine");
 		particulierRepo.save(p1);
+		Particulier p2= new Particulier("p1","p1",1,null,"Erlandais","René",d.parse("29/09/1993"),"jeune artiste en reconversion, je souhaite découvrir de nouveau domaine auquel apporte mon point de vue unique");
+		particulierRepo.save(p2);
+		Particulier p3= new Particulier("p2","p2",1,null,"Tic","Laetitia",d.parse("30/01/2000"),"j'aimerais travailler dans le renseignement militaire mais il me faut plus d'expérience ! si vous avez des projets pour moi n'hésitez pas!");
+		particulierRepo.save(p3);
+		Particulier p4= new Particulier("p3","p3",1,null,"Muholland","Matt",d.parse("05/08/1980"),"chanteur ingénieur australien, retrouvez ici ma chaîne youtube https://www.youtube.com/watch?v=X2WH8mHJnhM ");
+		particulierRepo.save(p4);
 		
 		
-		Entreprise e1= new Entreprise("e","e",0,null,"nomEntreprise","adresseEntreprise",75000,"0652145654","maDescription","monsite.com",2010,"moins de 15 employés");
+		
+		Entreprise e1= new Entreprise("e","e",0,null,"CherGroupe","86 boulevard Haussman, Paris (à partir de la semaine prochaine)",75000,"0652145654","formée par un groupe de jeunes Cdïstes, ce groupe est avant tout une équipe soudée qui aime la brioche, supportée même depuis l'étranger par un gourou motivant","http://localhost:4200/home-page",2020,"4-5 employés");
 		entrepriseRepo.save(e1);
-		Entreprise e2= new Entreprise("ez","ez",0,null,"Les laveurs de carreaux de Malakoff","12 rue de Malakoff",75000,"0652145654","maDescription","monsite.com",2010,"moins de 15 employés");
+		Entreprise e2= new Entreprise("carreauxMalakoof@clean.org","e1",0,null,"Les laveurs de carreaux de Malakoff","12 rue de Malakoff",75000,"0152145654","Nos laveurs de vitres expérimentés sont formés pour nettoyer tout type de vitres : vitres en hauteur, baies vitrées, Velux, auvents, etc. En plus de vos vitres, ils entretiennent les châssis et les pièces d’appui de vos fenêtres. Ce sont des salariés qui interviennent à domicile selon vos disponibilités du lundi au samedi. Contactez-nous pour définir vos besoins avec un conseiller qui se déplace sans frais, et celui-ci vous proposera un forfait sur mesure. ","https://www.isoclean.pro",2010,"plus de 100 employés");
 		entrepriseRepo.save(e2);
-		Entreprise e3= new Entreprise("ea","ea",0,null,"Le vendeur de tacos d'en face","36 rue de l'esic",75000,"0652145654","maDescription","monsite.com",2010,"moins de 15 employés");
+		Entreprise e3= new Entreprise("OOOOOTacos@gmail.com","e2",0,null,"Le vendeur de tacos d'en face","36 rue de l'esic",75000,"0752145654","Créé en 2007 O'Tacos est la première chaîne de restaurants #FrenchTacos\r\n" + 
+				"Dans chaque otacos, retrouvez notre recette originale de sauce fromagère et choisissez parmi 5 viandes certifiées HALAL, rigoureusement sélectionnées pour leur qualité premium.Pour satisfaire tout le monde, nous avons créé des otacos de toutes les tailles, allant même jusqu’à 2,5 kg pour les plus courageux.","https://o-tacos.com/fr",2017,"moins de 15 employés");
 		entrepriseRepo.save(e3);
-		
-		Projet pr1 = new Projet("nom","descriptif",d.parse("14/07/2018"),d.parse("14/07/2019"),15,0,e1,"interessement",0);
-		projetRepo.save(pr1);
-		
-		Participation pa1= new Participation(p1,e1,pr1);
-		participationRepo.save(pa1);
+		Entreprise e4= new Entreprise("GoldenGrahams@yahoo.fr","e3",0,null,"Nestle","77446 Marne La Vallée",75000,"0811 812 813","Créé il y a plus de 150 ans par Henri Nestlé, Nestlé est aujourd'hui le premier groupe alimentaire mondial spécialisé dans la Nutrition, Santé, Bien-être.La mission au quotidien du Groupe Nestlé est de proposer aux consommateurs, à travers une large gamme de produits, des repères fiables et durables en termes de nutrition, de plaisir, de qualité et de sécurité.Dirigé par Mark Schneider, le Groupe Nestlé est aujourd’hui présent dans plus de 189 pays. Nestlé commercialise plus de 10 000 types de produits fabriqués dans 413 usines réparties dans 85 pays.","https://www.nestle.fr/",1963,"plus de 2000 employés");
+		entrepriseRepo.save(e4);
 		
 		
 		
-		DomaineEntreprise de1= new DomaineEntreprise(d1,e1);
+		
+		DomaineEntreprise de1= new DomaineEntreprise(d5,e1);
 		DER.save(de1);
-		DomaineEntreprise de2= new DomaineEntreprise(d2,e1);
+		DomaineEntreprise de2= new DomaineEntreprise(d22,e1);
 		DER.save(de2);
-		DomaineEntreprise de3= new DomaineEntreprise(d3,e1);
+		DomaineEntreprise de3= new DomaineEntreprise(d24,e2);
 		DER.save(de3);
-		DomaineEntreprise de4= new DomaineEntreprise(d0,e1);
+		DomaineEntreprise de4= new DomaineEntreprise(d21,e3);
 		DER.save(de4);
-		DomaineEntreprise de5= new DomaineEntreprise(d0,e1);
+		DomaineEntreprise de5= new DomaineEntreprise(d1,e4);
 		DER.save(de5);
-		DomaineEntreprise de6= new DomaineEntreprise(d5,e2);
+		DomaineEntreprise de6= new DomaineEntreprise(d10,e4);
 		DER.save(de6);
 		
 		DomaineParticulier dpa1= new DomaineParticulier(d1,p1);
 		DPaR.save(dpa1);
-		DomaineParticulier dpa2= new DomaineParticulier(d2,p1);
+		DomaineParticulier dpa2= new DomaineParticulier(d2,p3);
 		DPaR.save(dpa2);
-		DomaineParticulier dpa3= new DomaineParticulier(d3,p1);
+		DomaineParticulier dpa3= new DomaineParticulier(d3,p2);
 		DPaR.save(dpa3);
-		DomaineParticulier dpa4= new DomaineParticulier(d4,p1);
+		DomaineParticulier dpa4= new DomaineParticulier(d4,p2);
 		DPaR.save(dpa4);
 		DomaineParticulier dpa5= new DomaineParticulier(d5,p1);
 		DPaR.save(dpa5);
+		DomaineParticulier dpa6= new DomaineParticulier(d11,p4);
+		DPaR.save(dpa6);
 		
-
 		
-		DemandeParticipation dp1=new DemandeParticipation(p1,pr1);
-		DPR.save(dp1);
-		
-		Projet proj1 = new Projet("Etude de marché aux puces","descriptif du premeier projet",d.parse("14/07/2018"),d.parse("14/07/2019"),15,0,e1,"interessement",0);
-		Projet proj2 = new Projet("Construire des avions en carton","descriptif du deuxieme projet ",d.parse("14/07/2018"),d.parse("14/07/2019"),15,0,e1,"interessement",2);
-		Projet proj3 = new Projet("Manger des sauterelles au repas de midi","descriptif du troisieme rpoejt kjdsfqsdfqsd",d.parse("14/07/2018"),d.parse("14/07/2019"),15,0,e1,"interessement",0);
-		Projet proj4 = new Projet("Développer une nouvelle gamme de produit pour vaches","descriptif du Quatrième et dernier projet",d.parse("14/07/2018"),d.parse("14/07/2019"),15,0,e1,"interessement",0);
-		Projet proj5 = new Projet("Concours de lancer de marteaux","descriptif de la competition de lancer",d.parse("14/07/2018"),d.parse("14/07/2019"),15,0,e1,"interessement",1);
+		Projet proj1 = new Projet("Presentation de CherProjet","il s'agit ici de présenter un site. l'entreprise, bien que certaine de ses qualités rhétoriques, n'est pas certaine de terminer à temps",d.parse("10/03/2020"),d.parse("14/03/2020"),6,2,e1,"brioche",2);
+		Projet proj2 = new Projet("Trouver un emploi ","nous recherchons un emploi révolutionnant la face du monde et permettant le TT (coronavirus oblige).Lors de ce projet nous vous accompagnerons pour nous aider à trouver du travail",d.parse("14/03/2020"),d.parse("14/04/2020"),15,3,e1,"notre bonheur",3);
+		Projet proj3 = new Projet("réalisation d'un site web","réaliser une plateforme de partage de projet Entreprise/Particulier",d.parse("03/03/2020"),d.parse("13/03/2020"),4,1,e1,"une grande satisfaction",1);
+		Projet proj6 = new Projet("Pot avec Jojo","réussir à retrouver Joel Banca après son retour en France",d.parse("03/04/2020"),d.parse("13/07/2020"),4,0,e1,"une sympatique soirée",0);
+		Projet proj7 = new Projet("Briser la glace","organiser une soirée de recrutement pour rameuter tout les meilleurs laveurs de vitre de la région!",d.parse("01/04/2020"),d.parse("20/07/2020"),4,0,e2,"une sympatique soirée",0);
+		Projet proj4 = new Projet("Développer une nouvelle gamme de produit pour vaches","noous les voulons plus charnue ! quelqu'un sait comment faire ? ",d.parse("14/07/2018"),d.parse("14/07/2021"),15,0,e3,"3 Tacos et peut être un emploi !",0);
+		Projet proj5 = new Projet("Concours de lancer de marteaux","le sport étant un élément primordiale pour avoir la vie saine que nous préconisons nous organisons régulièrement des évènements sportifs pour nos amis bons vivants !",d.parse("14/07/2020"),d.parse("14/07/2021"),63,0,e4,"une vie saine et un marteau",0);
 		projetRepo.save(proj1);
 		projetRepo.save(proj2);
 		projetRepo.save(proj3);
 		projetRepo.save(proj4);
 		projetRepo.save(proj5);
-
-		EtapeProjet ep1 = new EtapeProjet(d.parse("14/07/2018"), d.parse("14/09/2018"), "Etape test", "description test", proj1);
-		EPR.save(ep1);
-		EtapeProjet ep2 = new EtapeProjet(d.parse("14/03/2020"), d.parse("17/03/2020"), "Etape test", "description test", proj2);
-		EPR.save(ep2);
-		EtapeProjet ep3 = new EtapeProjet(d.parse("14/03/2020"), d.parse("15/03/2020"), "Etape test", "description test", proj2);
-		EPR.save(ep3);
-		EtapeProjet ep4 = new EtapeProjet(d.parse("22/03/2020"), d.parse("27/03/2020"), "Etape test", "description test", proj2);
-		EPR.save(ep4);
+		projetRepo.save(proj6);
+		projetRepo.save(proj7);
 		
-		Messages mes1 = new Messages(proj2, null, p1, null, null, "ceci est un message d'un particulier à un projet !");
+		Participation pa1= new Participation(p1,e3,proj4);
+		participationRepo.save(pa1);
+		Participation pa2= new Participation(p1,e1,proj1);
+		participationRepo.save(pa2);
+				
+		DemandeParticipation dp1=new DemandeParticipation(p3,proj6);
+		DPR.save(dp1);
+		DemandeParticipation dp2=new DemandeParticipation(p4,proj6);
+		DPR.save(dp2);
+
+
+		EtapeProjet ep1 = new EtapeProjet(d.parse("11/03/2020"), d.parse("13/03/2020"), "faire le site pour nous", "bonne chance", proj1);
+		EPR.save(ep1);
+		EtapeProjet ep2 = new EtapeProjet(d.parse("12/03/2020"), d.parse("13/03/2020"), "faire la doc pour nous", "allez plus vite !", proj1);
+		EPR.save(ep2);
+		EtapeProjet ep3 = new EtapeProjet(d.parse("11/03/2020"), d.parse("13/03/2020"), "aller chercher nos repas", "tu auras l'honneur de garder la monnaie", proj1);
+		EPR.save(ep3);
+
+		
+		Messages mes1 = new Messages(proj2, null, p1, null, null, "J'ai reçu de nombreuse demandes d'emploi , le projet se déroule à merveille !");
 		messagesRepo.save(mes1);
-		Messages mes2 = new Messages(null, null, p1, e1, null, "ceci est un message d'un particulier à une entreprise !");
+		Messages mes2 = new Messages(null, null, p1, e1, null, "bonjour, j'ai besoin d'aide pour structurer le projet");
 		messagesRepo.save(mes2);
-		Messages mes3 = new Messages(null, null, p1, e1, null, "ceci est un message a la meilleure des entreprises!");
+		Messages mes3 = new Messages(null, null, p1, e1, null, "c'est bon je viens de trouver la solution finalement !");
 		messagesRepo.save(mes3);
-		Messages mes4 = new Messages(null, e1, null, null, p1, "ceci est un message a destination du particulier 1!");
+		Messages mes4 = new Messages(null, e1, null, null, p1, "tes questions m'importunent. Limite les !");
 		messagesRepo.save(mes4);
-		Messages mes5 = new Messages(null, e1,null , null, p1, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
+		Messages mes5 = new Messages(null, e1,null , null, p1, "parlons de tout ça autour d'un verre mardi");
 		messagesRepo.save(mes5);
-		Messages mes6 = new Messages(proj2, e1, null, null, null, "ceci est un message d'une entreprise à un projet !");
+		Messages mes6 = new Messages(proj2, e1, null, null, null, "bravo René continu comme ça !");
 		messagesRepo.save(mes6);
 		
 		
-		ProjetPropose pp1 = new ProjetPropose("ezqgea", "test", d.parse("22/03/2020"),d.parse("22/04/2020"), 15, e1,p1, "tada", 0);
+		ProjetPropose pp1 = new ProjetPropose("faire un documentaire sur votre épopée de ces derniers mois","on m'a demandé lors de mes études de faire un documentaire sur un sujet ininteressant", d.parse("13/05/2020"),d.parse("13/11/2020"),1, e1, p2, "s'il vous plaît !", 0);
 		PPR.save(pp1);
-		DomaineProjetPropose dpp1= new DomaineProjetPropose(d4, pp1);
+		
+		DomaineProjetPropose dpp1= new DomaineProjetPropose(d3, pp1);
 		DPPR.save(dpp1);
-		DomaineProjetPropose dpp2= new DomaineProjetPropose(d5, pp1);
+		DomaineProjetPropose dpp2= new DomaineProjetPropose(d4, pp1);
 		DPPR.save(dpp2);
-		DomaineProjetPropose dpp3= new DomaineProjetPropose(d0, pp1);
+		DomaineProjetPropose dpp3= new DomaineProjetPropose(d22, pp1);
 		DPPR.save(dpp3);
-		DomaineProjetPropose dpp4= new DomaineProjetPropose(d0, pp1);
-		DPPR.save(dpp4);
-		DomaineProjetPropose dpp5= new DomaineProjetPropose(d0, pp1);
-		DPPR.save(dpp5);
-		
-		DomaineProjet dppp1= new DomaineProjet(d4, proj1);
+
+		DomaineProjet dppp1= new DomaineProjet(d14, proj1);
 		DPrR.save(dppp1);
-		DomaineProjet dppp2= new DomaineProjet(d5, proj1);
+		DomaineProjet dppp2= new DomaineProjet(d25, proj1);
 		DPrR.save(dppp2);
-		DomaineProjet dppp3= new DomaineProjet(d0, proj1);
+		DomaineProjet dppp3= new DomaineProjet(d29, proj2);
 		DPrR.save(dppp3);
-		DomaineProjet dppp4= new DomaineProjet(d0, proj1);
+		DomaineProjet dppp4= new DomaineProjet(d22, proj3);
 		DPrR.save(dppp4);
-		DomaineProjet dppp5= new DomaineProjet(d0, proj1);
+		DomaineProjet dppp5= new DomaineProjet(d1, proj4);
 		DPrR.save(dppp5);
-		
-		DomaineProjet dppp6= new DomaineProjet(d4, pr1);
+		DomaineProjet dppp6= new DomaineProjet(d30, proj5);
 		DPrR.save(dppp6);
-		DomaineProjet dppp7= new DomaineProjet(d5, pr1);
+		DomaineProjet dppp7= new DomaineProjet(d29, proj6);
 		DPrR.save(dppp7);
-		DomaineProjet dppp8= new DomaineProjet(d0, pr1);
+		DomaineProjet dppp8= new DomaineProjet(d25, proj7);
 		DPrR.save(dppp8);
-		DomaineProjet dppp9= new DomaineProjet(d0, pr1);
+		DomaineProjet dppp9= new DomaineProjet(d23, proj6);
 		DPrR.save(dppp9);
-		DomaineProjet dppp10= new DomaineProjet(d0, pr1);
-		DPrR.save(dppp10);
+		
+		
+		
 }
 }
