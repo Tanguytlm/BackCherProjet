@@ -197,7 +197,7 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		
 		
 		Projet proj1 = new Projet("Presentation de CherProjet","il s'agit ici de présenter un site. l'entreprise, bien que certaine de ses qualités rhétoriques, n'est pas certaine de terminer à temps",d.parse("10/03/2020"),d.parse("14/03/2020"),6,2,e1,"brioche",2);
-		Projet proj2 = new Projet("Trouver un emploi ","nous recherchons un emploi révolutionnant la face du monde et permettant le TT (coronavirus oblige).Lors de ce projet nous vous accompagnerons pour nous aider à trouver du travail",d.parse("14/03/2020"),d.parse("14/04/2020"),15,3,e1,"notre bonheur",3);
+		Projet proj2 = new Projet("Trouver une mission ","nous recherchons un emploi révolutionnant la face du monde et permettant le TT (coronavirus oblige).Lors de ce projet nous vous accompagnerons pour nous aider à trouver du travail",d.parse("14/03/2020"),d.parse("14/04/2020"),15,3,e1,"notre bonheur",3);
 		Projet proj3 = new Projet("réalisation d'un site web","réaliser une plateforme de partage de projet Entreprise/Particulier",d.parse("03/03/2020"),d.parse("13/03/2020"),4,1,e1,"une grande satisfaction",1);
 		Projet proj6 = new Projet("Pot avec Jojo","réussir à retrouver Joel Banca après son retour en France",d.parse("03/04/2020"),d.parse("13/07/2020"),4,0,e1,"une sympatique soirée",0);
 		Projet proj7 = new Projet("Briser la glace","organiser une soirée de recrutement pour rameuter tout les meilleurs laveurs de vitre de la région!",d.parse("01/04/2020"),d.parse("20/07/2020"),4,0,e2,"une sympatique soirée",0);
@@ -222,9 +222,9 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		DPR.save(dp2);
 
 
-		EtapeProjet ep1 = new EtapeProjet(d.parse("11/03/2020"), d.parse("13/03/2020"), "faire le site pour nous", "bonne chance", proj1);
+		EtapeProjet ep1 = new EtapeProjet(d.parse("11/03/2020"), d.parse("13/03/2020"), "faire la doc pour nous", "bonne chance", proj1);
 		EPR.save(ep1);
-		EtapeProjet ep2 = new EtapeProjet(d.parse("12/03/2020"), d.parse("13/03/2020"), "faire la doc pour nous", "allez plus vite !", proj1);
+		EtapeProjet ep2 = new EtapeProjet(d.parse("12/03/2020"), d.parse("13/03/2020"), "parler à notre place", "allez plus vite !", proj1);
 		EPR.save(ep2);
 		EtapeProjet ep3 = new EtapeProjet(d.parse("11/03/2020"), d.parse("13/03/2020"), "aller chercher nos repas", "tu auras l'honneur de garder la monnaie", proj1);
 		EPR.save(ep3);
