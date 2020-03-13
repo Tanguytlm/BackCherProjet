@@ -147,11 +147,11 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		
 		Particulier p1= new Particulier("A.Bean@gmail.com","a",1,null,"Bean","Arthur",d.parse("27/09/1996"),"jeune agronôme diplomé de l'université agricole de Beynes recherchant des missions pour améliorer sa connaissance de la filière bovine");
 		particulierRepo.save(p1);
-		Particulier p2= new Particulier("p1","p1",1,null,"Erlandais","René",d.parse("29/09/1993"),"jeune artiste en reconversion, je souhaite découvrir de nouveau domaine auquel apporte mon point de vue unique");
+		Particulier p2= new Particulier("Neederlands@yahoo.fr","p1",1,null,"Erlandais","René",d.parse("29/09/1993"),"jeune artiste en reconversion, je souhaite découvrir de nouveau domaine auquel apporte mon point de vue unique");
 		particulierRepo.save(p2);
-		Particulier p3= new Particulier("p2","p2",1,null,"Tic","Laetitia",d.parse("30/01/2000"),"j'aimerais travailler dans le renseignement militaire mais il me faut plus d'expérience ! si vous avez des projets pour moi n'hésitez pas!");
+		Particulier p3= new Particulier("Ltic@outlook.fr","p2",1,null,"Tic","Laetitia",d.parse("30/01/2000"),"j'aimerais travailler dans le renseignement militaire mais il me faut plus d'expérience ! si vous avez des projets pour moi n'hésitez pas!");
 		particulierRepo.save(p3);
-		Particulier p4= new Particulier("p3","p3",1,null,"Muholland","Matt",d.parse("05/08/1980"),"chanteur ingénieur australien, retrouvez ici ma chaîne youtube https://www.youtube.com/watch?v=X2WH8mHJnhM ");
+		Particulier p4= new Particulier("Matty@hotmail.fr","p3",1,null,"Muholland","Matt",d.parse("05/08/1980"),"chanteur ingénieur australien, retrouvez ici ma chaîne youtube https://www.youtube.com/watch?v=X2WH8mHJnhM ");
 		particulierRepo.save(p4);
 		
 		
@@ -203,6 +203,7 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		Projet proj7 = new Projet("Briser la glace","organiser une soirée de recrutement pour rameuter tout les meilleurs laveurs de vitre de la région!",d.parse("01/04/2020"),d.parse("20/07/2020"),4,0,e2,"une sympatique soirée",0);
 		Projet proj4 = new Projet("Développer une nouvelle gamme de produit pour vaches","noous les voulons plus charnue ! quelqu'un sait comment faire ? ",d.parse("14/07/2018"),d.parse("14/07/2021"),15,0,e3,"3 Tacos et peut être un emploi !",0);
 		Projet proj5 = new Projet("Concours de lancer de marteaux","le sport étant un élément primordiale pour avoir la vie saine que nous préconisons nous organisons régulièrement des évènements sportifs pour nos amis bons vivants !",d.parse("14/07/2020"),d.parse("14/07/2021"),63,0,e4,"une vie saine et un marteau",0);
+		Projet proj8 = new Projet("Rendre nos emballages plus respectueux de l'environnement","compte tenu des enjeux environnementaux auquels nous faisons face au quotidien, les consommateurs attendent de nous des produits plus verts et nous répondrons à leurs attentes parce que c'est notre planète !",d.parse("14/07/2020"),d.parse("14/07/2021"),63,0,e4,"possibilité d'embauche en CDD au sein de notre service conditionnement",0);
 		projetRepo.save(proj1);
 		projetRepo.save(proj2);
 		projetRepo.save(proj3);
@@ -210,6 +211,7 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		projetRepo.save(proj5);
 		projetRepo.save(proj6);
 		projetRepo.save(proj7);
+		projetRepo.save(proj8);
 		
 		Participation pa1= new Participation(p1,e3,proj4);
 		participationRepo.save(pa1);
@@ -222,15 +224,13 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		DPR.save(dp2);
 
 
-		EtapeProjet ep1 = new EtapeProjet(d.parse("11/03/2020"), d.parse("13/03/2020"), "faire la doc pour nous", "bonne chance", proj1);
+		EtapeProjet ep1 = new EtapeProjet(d.parse("11/03/2020"), d.parse("13/03/2020"), "faire la documentation de l'application", "bonne chance", proj1);
 		EPR.save(ep1);
-		EtapeProjet ep2 = new EtapeProjet(d.parse("12/03/2020"), d.parse("13/03/2020"), "parler à notre place", "allez plus vite !", proj1);
+		EtapeProjet ep2 = new EtapeProjet(d.parse("13/03/2020"), d.parse("13/03/2020"), "se répartir les rôle", "allez plus vite !", proj1);
 		EPR.save(ep2);
-		EtapeProjet ep3 = new EtapeProjet(d.parse("11/03/2020"), d.parse("13/03/2020"), "aller chercher nos repas", "tu auras l'honneur de garder la monnaie", proj1);
-		EPR.save(ep3);
 
 		
-		Messages mes1 = new Messages(proj2, null, p1, null, null, "J'ai reçu de nombreuse demandes d'emploi , le projet se déroule à merveille !");
+		Messages mes1 = new Messages(proj1, null, p1, null, null, "J'ai reçu de nombreuse demandes d'emploi , le projet se déroule à merveille !");
 		messagesRepo.save(mes1);
 		Messages mes2 = new Messages(null, null, p1, e1, null, "bonjour, j'ai besoin d'aide pour structurer le projet");
 		messagesRepo.save(mes2);
@@ -240,7 +240,7 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		messagesRepo.save(mes4);
 		Messages mes5 = new Messages(null, e1,null , null, p1, "parlons de tout ça autour d'un verre mardi");
 		messagesRepo.save(mes5);
-		Messages mes6 = new Messages(proj2, e1, null, null, null, "bravo René continu comme ça !");
+		Messages mes6 = new Messages(proj1, e1, null, null, null, "bravo René continu comme ça !");
 		messagesRepo.save(mes6);
 		
 		
@@ -272,7 +272,8 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		DPrR.save(dppp8);
 		DomaineProjet dppp9= new DomaineProjet(d23, proj6);
 		DPrR.save(dppp9);
-		
+		DomaineProjet dppp10= new DomaineProjet(d24, proj6);
+		DPrR.save(dppp10);
 		
 		
 }
