@@ -145,7 +145,7 @@ public class BackCherProjetApplication implements CommandLineRunner {
 
 
 		
-		Particulier p1= new Particulier("p","p",1,null,"Bean","Arthur",d.parse("27/09/1996"),"jeune agronôme diplomé de l'université agricole de Beynes recherchant des missions pour améliorer sa connaissance de la sphère bovine");
+		Particulier p1= new Particulier("A.Bean@gmail.com","a",1,null,"Bean","Arthur",d.parse("27/09/1996"),"jeune agronôme diplomé de l'université agricole de Beynes recherchant des missions pour améliorer sa connaissance de la sphère bovine");
 		particulierRepo.save(p1);
 		Particulier p2= new Particulier("p1","p1",1,null,"Erlandais","René",d.parse("29/09/1993"),"jeune artiste en reconversion, je souhaite découvrir de nouveau domaine auquel apporte mon point de vue unique");
 		particulierRepo.save(p2);
@@ -156,7 +156,7 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		
 		
 		
-		Entreprise e1= new Entreprise("e","e",0,null,"CherGroupe","86 boulevard Haussman, Paris (à partir de la semaine prochaine)",75000,"0652145654","formée par un groupe de jeunes Cdïstes, ce groupe est avant tout une équipe soudée qui aime la brioche, supportée même depuis l'étranger par un gourou motivant","http://localhost:4200/home-page",2020,"4-5 employés");
+		Entreprise e1= new Entreprise("CherGroupe@gmail.com","c",0,null,"CherGroupe","86 boulevard Haussman, Paris (à partir de la semaine prochaine)",75000,"0652145654","formée par un groupe de jeunes Cdïstes, ce groupe est avant tout une équipe soudée qui aime la brioche, supportée même depuis l'étranger par un gourou motivant","http://localhost:4200/home-page",2020,"4-5 employés");
 		entrepriseRepo.save(e1);
 		Entreprise e2= new Entreprise("carreauxMalakoof@clean.org","e1",0,null,"Les laveurs de carreaux de Malakoff","12 rue de Malakoff",75000,"0152145654","Nos laveurs de vitres expérimentés sont formés pour nettoyer tout type de vitres : vitres en hauteur, baies vitrées, Velux, auvents, etc. En plus de vos vitres, ils entretiennent les châssis et les pièces d’appui de vos fenêtres. Ce sont des salariés qui interviennent à domicile selon vos disponibilités du lundi au samedi. Contactez-nous pour définir vos besoins avec un conseiller qui se déplace sans frais, et celui-ci vous proposera un forfait sur mesure. ","https://www.isoclean.pro",2010,"plus de 100 employés");
 		entrepriseRepo.save(e2);
