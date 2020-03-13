@@ -65,6 +65,7 @@ public class BackCherProjetApplication implements CommandLineRunner {
 	@Autowired
 	private ProjetProposeRepository PPR;
 
+
 	public static void main(String[] args) {
 		SpringApplication.run(BackCherProjetApplication.class, args);
 		
@@ -160,6 +161,8 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		Participation pa1= new Participation(p1,e1,pr1);
 		participationRepo.save(pa1);
 		
+		
+		
 		DomaineEntreprise de1= new DomaineEntreprise(d1,e1);
 		DER.save(de1);
 		DomaineEntreprise de2= new DomaineEntreprise(d2,e1);
@@ -169,7 +172,9 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		DomaineEntreprise de4= new DomaineEntreprise(d0,e1);
 		DER.save(de4);
 		DomaineEntreprise de5= new DomaineEntreprise(d0,e1);
-		DER.save(de4);
+		DER.save(de5);
+		DomaineEntreprise de6= new DomaineEntreprise(d5,e2);
+		DER.save(de6);
 		
 		DomaineParticulier dpa1= new DomaineParticulier(d1,p1);
 		DPaR.save(dpa1);
@@ -182,8 +187,7 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		DomaineParticulier dpa5= new DomaineParticulier(d5,p1);
 		DPaR.save(dpa5);
 		
-		DomaineProjet dpr1= new DomaineProjet(d1,pr1);
-		DPrR.save(dpr1);
+
 		
 		DemandeParticipation dp1=new DemandeParticipation(p1,pr1);
 		DPR.save(dp1);
@@ -221,10 +225,40 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		Messages mes6 = new Messages(proj2, e1, null, null, null, "ceci est un message d'une entreprise à un projet !");
 		messagesRepo.save(mes6);
 		
+		
 		ProjetPropose pp1 = new ProjetPropose("ezqgea", "test", d.parse("22/03/2020"),d.parse("22/04/2020"), 15, e1,p1, "tada", 0);
 		PPR.save(pp1);
-		DomaineProjetPropose dpp1= new DomaineProjetPropose(d5, pp1);
+		DomaineProjetPropose dpp1= new DomaineProjetPropose(d4, pp1);
 		DPPR.save(dpp1);
+		DomaineProjetPropose dpp2= new DomaineProjetPropose(d5, pp1);
+		DPPR.save(dpp2);
+		DomaineProjetPropose dpp3= new DomaineProjetPropose(d0, pp1);
+		DPPR.save(dpp3);
+		DomaineProjetPropose dpp4= new DomaineProjetPropose(d0, pp1);
+		DPPR.save(dpp4);
+		DomaineProjetPropose dpp5= new DomaineProjetPropose(d0, pp1);
+		DPPR.save(dpp5);
 		
+		DomaineProjet dppp1= new DomaineProjet(d4, proj1);
+		DPrR.save(dppp1);
+		DomaineProjet dppp2= new DomaineProjet(d5, proj1);
+		DPrR.save(dppp2);
+		DomaineProjet dppp3= new DomaineProjet(d0, proj1);
+		DPrR.save(dppp3);
+		DomaineProjet dppp4= new DomaineProjet(d0, proj1);
+		DPrR.save(dppp4);
+		DomaineProjet dppp5= new DomaineProjet(d0, proj1);
+		DPrR.save(dppp5);
+		
+		DomaineProjet dppp6= new DomaineProjet(d4, pr1);
+		DPrR.save(dppp6);
+		DomaineProjet dppp7= new DomaineProjet(d5, pr1);
+		DPrR.save(dppp7);
+		DomaineProjet dppp8= new DomaineProjet(d0, pr1);
+		DPrR.save(dppp8);
+		DomaineProjet dppp9= new DomaineProjet(d0, pr1);
+		DPrR.save(dppp9);
+		DomaineProjet dppp10= new DomaineProjet(d0, pr1);
+		DPrR.save(dppp10);
 }
 }

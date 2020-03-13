@@ -45,7 +45,7 @@ public class EtapeProjetRest {
 		Date dateMax = p.getProjet().getDateFin();
 		Date dateMin = p.getProjet().getDateDebut();
 		EtapeProjet incorrecte = new EtapeProjet();
-		if (p.getDateDebut().after(dateMin) && p.getDateFin().before(dateMax) && p.getDateDebut().before(p.getDateFin())) {
+		if (p.getDateDebut().after(dateMin) && p.getDateFin().before(dateMax)) {
 
 			return EtapeProjetRepo.save(p);
 		} else {
