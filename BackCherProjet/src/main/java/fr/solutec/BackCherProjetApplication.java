@@ -148,6 +148,7 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		Particulier p1= new Particulier("p","p",1,null,"monNom","monPrenom",d.parse("27/09/1996"),null);
 		particulierRepo.save(p1);
 		
+		
 		Entreprise e1= new Entreprise("e","e",0,null,"nomEntreprise","adresseEntreprise",75000,"0652145654","maDescription","monsite.com",2010,"moins de 15 employés");
 		entrepriseRepo.save(e1);
 		Entreprise e2= new Entreprise("ez","ez",0,null,"Les laveurs de carreaux de Malakoff","12 rue de Malakoff",75000,"0652145654","maDescription","monsite.com",2010,"moins de 15 employés");
