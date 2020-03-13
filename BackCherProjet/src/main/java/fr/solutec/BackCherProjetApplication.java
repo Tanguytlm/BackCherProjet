@@ -145,7 +145,7 @@ public class BackCherProjetApplication implements CommandLineRunner {
 
 
 		
-		Particulier p1= new Particulier("A.Bean@gmail.com","a",1,null,"Bean","Arthur",d.parse("27/09/1996"),"jeune agronôme diplomé de l'université agricole de Beynes recherchant des missions pour améliorer sa connaissance de la sphère bovine");
+		Particulier p1= new Particulier("A.Bean@gmail.com","a",1,null,"Bean","Arthur",d.parse("27/09/1996"),"jeune agronôme diplomé de l'université agricole de Beynes recherchant des missions pour améliorer sa connaissance de la filière bovine");
 		particulierRepo.save(p1);
 		Particulier p2= new Particulier("p1","p1",1,null,"Erlandais","René",d.parse("29/09/1993"),"jeune artiste en reconversion, je souhaite découvrir de nouveau domaine auquel apporte mon point de vue unique");
 		particulierRepo.save(p2);
