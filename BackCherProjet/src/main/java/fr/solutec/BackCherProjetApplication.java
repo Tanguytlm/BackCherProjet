@@ -156,7 +156,7 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		Entreprise e3= new Entreprise("ea","ea",0,null,"Le vendeur de tacos d'en face","36 rue de l'esic",75000,"0652145654","maDescription","monsite.com",2010,"moins de 15 employés");
 		entrepriseRepo.save(e3);
 		
-		Projet pr1 = new Projet("nom","descriptif",d.parse("14/07/2018"),d.parse("14/07/2019"),15,e1,"interessement",0);
+		Projet pr1 = new Projet("nom","descriptif",d.parse("14/07/2018"),d.parse("14/07/2019"),15,0,e1,"interessement",0);
 		projetRepo.save(pr1);
 		
 		Participation pa1= new Participation(p1,e1,pr1);
@@ -193,11 +193,11 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		DemandeParticipation dp1=new DemandeParticipation(p1,pr1);
 		DPR.save(dp1);
 		
-		Projet proj1 = new Projet("Etude de marché aux puces","descriptif du premeier projet",d.parse("14/07/2018"),d.parse("14/07/2019"),15,e1,"interessement",0);
-		Projet proj2 = new Projet("Construire des avions en carton","descriptif du deuxieme projet ",d.parse("14/07/2018"),d.parse("14/07/2019"),15,e1,"interessement",2);
-		Projet proj3 = new Projet("Manger des sauterelles au repas de midi","descriptif du troisieme rpoejt kjdsfqsdfqsd",d.parse("14/07/2018"),d.parse("14/07/2019"),15,e1,"interessement",0);
-		Projet proj4 = new Projet("Développer une nouvelle gamme de produit pour vaches","descriptif du Quatrième et dernier projet",d.parse("14/07/2018"),d.parse("14/07/2019"),15,e1,"interessement",0);
-		Projet proj5 = new Projet("Concours de lancer de marteaux","descriptif de la competition de lancer",d.parse("14/07/2018"),d.parse("14/07/2019"),15,e1,"interessement",1);
+		Projet proj1 = new Projet("Etude de marché aux puces","descriptif du premeier projet",d.parse("14/07/2018"),d.parse("14/07/2019"),15,0,e1,"interessement",0);
+		Projet proj2 = new Projet("Construire des avions en carton","descriptif du deuxieme projet ",d.parse("14/07/2018"),d.parse("14/07/2019"),15,0,e1,"interessement",2);
+		Projet proj3 = new Projet("Manger des sauterelles au repas de midi","descriptif du troisieme rpoejt kjdsfqsdfqsd",d.parse("14/07/2018"),d.parse("14/07/2019"),15,0,e1,"interessement",0);
+		Projet proj4 = new Projet("Développer une nouvelle gamme de produit pour vaches","descriptif du Quatrième et dernier projet",d.parse("14/07/2018"),d.parse("14/07/2019"),15,0,e1,"interessement",0);
+		Projet proj5 = new Projet("Concours de lancer de marteaux","descriptif de la competition de lancer",d.parse("14/07/2018"),d.parse("14/07/2019"),15,0,e1,"interessement",1);
 		projetRepo.save(proj1);
 		projetRepo.save(proj2);
 		projetRepo.save(proj3);

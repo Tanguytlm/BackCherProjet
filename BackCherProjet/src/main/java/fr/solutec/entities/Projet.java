@@ -23,11 +23,18 @@ public class Projet {
 	@Temporal(TemporalType.DATE)
 	private Date dateFin;
 	private int	nbrParticipants;
+	private int	nbrParticipantsReel;
 	@ManyToOne
 	private Entreprise entreprise;
 	private String interessement;
 	private int statut;
 	
+	public int getNbrParticipantsReel() {
+		return nbrParticipantsReel;
+	}
+	public void setNbrParticipantsReel(int nbrParticipantsReel) {
+		this.nbrParticipantsReel = nbrParticipantsReel;
+	}
 	public Long getIdProjet() {
 		return idProjet;
 	}
@@ -82,7 +89,7 @@ public class Projet {
 	public void setStatut(int statut) {
 		this.statut = statut;
 	}
-	public Projet(String nom, String descriptif, Date dateDebut, Date dateFin, int nbrParticipants,
+	public Projet(String nom, String descriptif, Date dateDebut, Date dateFin, int nbrParticipants, int nbrParticipantsReel,
 			Entreprise entreprise, String interessement, int statut) {
 		super();
 		this.nom = nom;
@@ -90,6 +97,7 @@ public class Projet {
 		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;
 		this.nbrParticipants = nbrParticipants;
+		this.nbrParticipantsReel = nbrParticipantsReel;
 		this.entreprise = entreprise;
 		this.interessement = interessement;
 		this.statut = statut;
