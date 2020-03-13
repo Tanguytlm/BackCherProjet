@@ -145,18 +145,18 @@ public class BackCherProjetApplication implements CommandLineRunner {
 
 
 		
-		Particulier p1= new Particulier("A.Bean@gmail.com","a",1,null,"Bean","Arthur",d.parse("27/09/1996"),"jeune agronôme diplomé de l'université agricole de Beynes recherchant des missions pour améliorer sa connaissance de la filière bovine");
+		Particulier p1= new Particulier("A.Bean@gmail.com","a",1,null,"Bean","Arthur",d.parse("27/09/1996"),"Jeune agronôme diplomé de l'université agricole de Beynes recherchant des missions pour améliorer sa connaissance de la filière bovine");
 		particulierRepo.save(p1);
-		Particulier p2= new Particulier("Neederlands@yahoo.fr","p1",1,null,"Erlandais","René",d.parse("29/09/1993"),"jeune artiste en reconversion, je souhaite découvrir de nouveau domaine auquel apporte mon point de vue unique");
+		Particulier p2= new Particulier("Neederlands@yahoo.fr","p1",1,null,"Erlandais","René",d.parse("29/09/1993"),"Jeune artiste en reconversion, je souhaite découvrir de nouveau domaine auquel apporte mon point de vue unique");
 		particulierRepo.save(p2);
-		Particulier p3= new Particulier("Ltic@outlook.fr","p2",1,null,"Tic","Laetitia",d.parse("30/01/2000"),"j'aimerais travailler dans le renseignement militaire mais il me faut plus d'expérience ! si vous avez des projets pour moi n'hésitez pas!");
+		Particulier p3= new Particulier("Ltic@outlook.fr","p2",1,null,"Tic","Laetitia",d.parse("30/01/2000"),"J'aimerais travailler dans le renseignement militaire mais il me faut plus d'expérience ! si vous avez des projets pour moi n'hésitez pas!");
 		particulierRepo.save(p3);
-		Particulier p4= new Particulier("Matty@hotmail.fr","p3",1,null,"Muholland","Matt",d.parse("05/08/1980"),"chanteur ingénieur australien, retrouvez ici ma chaîne youtube https://www.youtube.com/watch?v=X2WH8mHJnhM ");
+		Particulier p4= new Particulier("Matty@hotmail.fr","p3",1,null,"Muholland","Matt",d.parse("05/08/1980"),"Chanteur ingénieur australien, retrouvez ici ma chaîne youtube https://www.youtube.com/watch?v=X2WH8mHJnhM ");
 		particulierRepo.save(p4);
 		
 		
 		
-		Entreprise e1= new Entreprise("CherGroupe@gmail.com","c",0,null,"CherGroupe","86 boulevard Haussman, Paris (à partir de la semaine prochaine)",75000,"0652145654","formée par un groupe de jeunes Cdïstes, ce groupe est avant tout une équipe soudée qui aime la brioche, supportée même depuis l'étranger par un gourou motivant","http://localhost:4200/home-page",2020,"4-5 employés");
+		Entreprise e1= new Entreprise("CherGroupe@gmail.com","c",0,null,"CherGroupe","86 boulevard Haussman, Paris (à partir de la semaine prochaine)",75000,"0652145654","Formée par un groupe de jeunes Cdïstes, ce groupe est avant tout une équipe soudée qui aime la brioche, supportée même depuis l'étranger par un gourou motivant","http://localhost:4200/home-page",2020,"4-5 employés");
 		entrepriseRepo.save(e1);
 		Entreprise e2= new Entreprise("carreauxMalakoof@clean.org","e1",0,null,"Les laveurs de carreaux de Malakoff","12 rue de Malakoff",75000,"0152145654","Nos laveurs de vitres expérimentés sont formés pour nettoyer tout type de vitres : vitres en hauteur, baies vitrées, Velux, auvents, etc. En plus de vos vitres, ils entretiennent les châssis et les pièces d’appui de vos fenêtres. Ce sont des salariés qui interviennent à domicile selon vos disponibilités du lundi au samedi. Contactez-nous pour définir vos besoins avec un conseiller qui se déplace sans frais, et celui-ci vous proposera un forfait sur mesure. ","https://www.isoclean.pro",2010,"plus de 100 employés");
 		entrepriseRepo.save(e2);
@@ -196,14 +196,14 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		DPaR.save(dpa6);
 		
 		
-		Projet proj1 = new Projet("Presentation de CherProjet","il s'agit ici de présenter un site. l'entreprise, bien que certaine de ses qualités rhétoriques, n'est pas certaine de terminer à temps",d.parse("10/03/2020"),d.parse("14/03/2020"),6,2,e1,"brioche",2);
+		Projet proj1 = new Projet("Presentation de CherProjet","Il s'agit ici de présenter un site. L'entreprise, bien que certaine de ses qualités rhétoriques, n'est pas certaine de terminer à temps",d.parse("10/03/2020"),d.parse("14/03/2020"),6,2,e1,"brioche",2);
 		Projet proj2 = new Projet("Trouver une mission ","nous recherchons un emploi révolutionnant la face du monde et permettant le TT (coronavirus oblige).Lors de ce projet nous vous accompagnerons pour nous aider à trouver du travail",d.parse("14/03/2020"),d.parse("14/04/2020"),15,3,e1,"notre bonheur",3);
-		Projet proj3 = new Projet("réalisation d'un site web","réaliser une plateforme de partage de projet Entreprise/Particulier",d.parse("03/03/2020"),d.parse("13/03/2020"),4,1,e1,"une grande satisfaction",1);
-		Projet proj6 = new Projet("Pot avec Jojo","réussir à retrouver Joel Banca après son retour en France",d.parse("03/04/2020"),d.parse("13/07/2020"),4,0,e1,"une sympatique soirée",0);
-		Projet proj7 = new Projet("Briser la glace","organiser une soirée de recrutement pour rameuter tout les meilleurs laveurs de vitre de la région!",d.parse("01/04/2020"),d.parse("20/07/2020"),4,0,e2,"une sympatique soirée",0);
-		Projet proj4 = new Projet("Développer une nouvelle gamme de produit pour vaches","noous les voulons plus charnue ! quelqu'un sait comment faire ? ",d.parse("14/07/2018"),d.parse("14/07/2021"),15,0,e3,"3 Tacos et peut être un emploi !",0);
-		Projet proj5 = new Projet("Concours de lancer de marteaux","le sport étant un élément primordiale pour avoir la vie saine que nous préconisons nous organisons régulièrement des évènements sportifs pour nos amis bons vivants !",d.parse("14/07/2020"),d.parse("14/07/2021"),63,0,e4,"une vie saine et un marteau",0);
-		Projet proj8 = new Projet("Rendre nos emballages plus respectueux de l'environnement","compte tenu des enjeux environnementaux auquels nous faisons face au quotidien, les consommateurs attendent de nous des produits plus verts et nous répondrons à leurs attentes parce que c'est notre planète !",d.parse("14/07/2020"),d.parse("14/07/2021"),63,0,e4,"possibilité d'embauche en CDD au sein de notre service conditionnement",0);
+		Projet proj3 = new Projet("Réalisation d'un site web","Réaliser une plateforme de partage de projet Entreprise/Particulier",d.parse("03/03/2020"),d.parse("13/03/2020"),4,1,e1,"une grande satisfaction",1);
+		Projet proj6 = new Projet("Pot avec Jojo","Réussir à retrouver Joel Banka après son retour en France",d.parse("03/04/2020"),d.parse("13/07/2020"),4,0,e1,"une sympatique soirée",0);
+		Projet proj7 = new Projet("Briser la glace","Organiser une soirée de recrutement pour rameuter tout les meilleurs laveurs de vitre de la région!",d.parse("01/04/2020"),d.parse("20/07/2020"),4,0,e2,"une sympatique soirée",0);
+		Projet proj4 = new Projet("Développer une nouvelle gamme de produit pour vaches","Nous les voulons plus charnue ! Quelqu'un sait comment faire ? ",d.parse("14/07/2018"),d.parse("14/07/2021"),15,0,e3,"3 Tacos et peut être un emploi !",0);
+		Projet proj5 = new Projet("Concours de lancer de marteaux","Le sport étant un élément primordiale pour avoir la vie saine que nous préconisons nous organisons régulièrement des évènements sportifs pour nos amis bons vivants !",d.parse("14/07/2020"),d.parse("14/07/2021"),63,0,e4,"une vie saine et un marteau",0);
+		Projet proj8 = new Projet("Rendre nos emballages plus respectueux de l'environnement","Compte tenu des enjeux environnementaux auquels nous faisons face au quotidien, les consommateurs attendent de nous des produits plus verts et nous répondrons à leurs attentes parce que c'est notre planète !",d.parse("14/07/2020"),d.parse("14/07/2021"),3,0,e4,"possibilité d'embauche en CDD au sein de notre service conditionnement",0);
 		projetRepo.save(proj1);
 		projetRepo.save(proj2);
 		projetRepo.save(proj3);
@@ -224,27 +224,27 @@ public class BackCherProjetApplication implements CommandLineRunner {
 		DPR.save(dp2);
 
 
-		EtapeProjet ep1 = new EtapeProjet(d.parse("11/03/2020"), d.parse("13/03/2020"), "faire la documentation de l'application", "bonne chance", proj1);
+		EtapeProjet ep1 = new EtapeProjet(d.parse("11/03/2020"), d.parse("13/03/2020"), "Faire la documentation de l'application", "bonne chance", proj1);
 		EPR.save(ep1);
-		EtapeProjet ep2 = new EtapeProjet(d.parse("13/03/2020"), d.parse("13/03/2020"), "se répartir les rôle", "allez plus vite !", proj1);
+		EtapeProjet ep2 = new EtapeProjet(d.parse("13/03/2020"), d.parse("13/03/2020"), "Se répartir les rôle", "allez plus vite !", proj1);
 		EPR.save(ep2);
 
 		
 		Messages mes1 = new Messages(proj1, null, p1, null, null, "J'ai reçu de nombreuse demandes d'emploi , le projet se déroule à merveille !");
 		messagesRepo.save(mes1);
-		Messages mes2 = new Messages(null, null, p1, e1, null, "bonjour, j'ai besoin d'aide pour structurer le projet");
+		Messages mes2 = new Messages(null, null, p1, e1, null, "Bonjour, j'ai besoin d'aide pour structurer le projet");
 		messagesRepo.save(mes2);
-		Messages mes3 = new Messages(null, null, p1, e1, null, "c'est bon je viens de trouver la solution finalement !");
+		Messages mes3 = new Messages(null, null, p1, e1, null, "C'est bon je viens de trouver la solution finalement !");
 		messagesRepo.save(mes3);
-		Messages mes4 = new Messages(null, e1, null, null, p1, "tes questions m'importunent. Limite les !");
+		Messages mes4 = new Messages(null, e1, null, null, p1, "Tes questions m'importunent. Limite les !");
 		messagesRepo.save(mes4);
-		Messages mes5 = new Messages(null, e1,null , null, p1, "parlons de tout ça autour d'un verre mardi");
+		Messages mes5 = new Messages(null, e1,null , null, p1, "Parlons de tout ça autour d'un verre mardi");
 		messagesRepo.save(mes5);
-		Messages mes6 = new Messages(proj1, e1, null, null, null, "bravo René continu comme ça !");
+		Messages mes6 = new Messages(proj1, e1, null, null, null, "Bravo René continu comme ça !");
 		messagesRepo.save(mes6);
 		
 		
-		ProjetPropose pp1 = new ProjetPropose("faire un documentaire sur votre épopée de ces derniers mois","on m'a demandé lors de mes études de faire un documentaire sur un sujet ininteressant", d.parse("13/05/2020"),d.parse("13/11/2020"),1, e1, p2, "s'il vous plaît !", 0);
+		ProjetPropose pp1 = new ProjetPropose("Faire un documentaire sur votre épopée de ces derniers mois","On m'a demandé lors de mes études de faire un documentaire sur un sujet ininteressant", d.parse("13/05/2020"),d.parse("13/11/2020"),1, e1, p2, "s'il vous plaît !", 0);
 		PPR.save(pp1);
 		
 		DomaineProjetPropose dpp1= new DomaineProjetPropose(d3, pp1);
